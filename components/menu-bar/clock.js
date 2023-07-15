@@ -23,7 +23,7 @@ const Clock = () => {
     let hour = date.getHours();
     let minute = date.getMinutes();
     let dayNum = date.getDate();
-    let monthNum = date.getMonth() + 1;
+    let monthNum = date.getMonth();
 
     hour = hour < 10 ? "0" + hour : hour;
     minute = minute < 10 ? "0" + minute : minute;
@@ -34,7 +34,7 @@ const Clock = () => {
     return time;
   }
 
-  return <span className="m-0 text-[14px]">{showTime()}</span>;
+  return <span className="m-0 text-[13px]">{showTime()}</span>;
 };
 
 export default Clock;

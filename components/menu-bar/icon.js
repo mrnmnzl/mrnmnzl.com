@@ -1,8 +1,7 @@
 import React from "react";
-import { BsGrid3X3GapFill } from "react-icons/bs";
 
 const Icon = ({ url = "/", children }) => (
-  <div className="mr-[14px]">
+  <div className="mr-[17px]">
     <a href={url}>{children}</a>
   </div>
 );
