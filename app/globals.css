@@ -2,16 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  overflow: hidden;
-}
-
-body {
-  background-color: rgb(122, 17, 89);
+@layer base {
+  html {
+    overflow: hidden;
+  }
+  
+  body {
+    background-color: rgb(166, 89, 142);
+  }
 }
 
 @layer components {
-  .about {
+  .about-page {
     position: absolute;
     top: 0;
     left: 0;
@@ -24,8 +26,46 @@ body {
     z-index: 1001;
   }
 
+  .dock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    margin: 15px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+  }
+
+  .app-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+  
+    flex-direction: column;
+    width: 55px;
+    height: 55px;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: height 0.3s, width 0.3s;
+  }
+
+  .app-icon-tool-tip {
+    display: absolute;
+    visibility: hidden;
+    margin-top: -110px;
+    padding: 3px 10px;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
   @media (min-width: 640px) { 
-    .about {
+    .about-page {
       top: 40%;
       left: 50%;
       transform-origin: center;
@@ -36,133 +76,35 @@ body {
       border-radius: 10px;
       overflow: hidden;
     }
+
+    .dock {
+      align-items: flex-end;
+      height: 65px;
+      width: unset;
+      margin: 0 0 10px 0;
+      padding: 0 10px 5px;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255,255,255, 0.15);
+    }
+
+    .app-icon {
+      width: 50px;
+      height: 50px;
+      margin: 3px 2px;
+    }
+
+    .app-icon:hover {
+      height: 70px;
+      width: 70px;
+    }
   }
 }
 
-
-/* Dock */
-.dock {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  z-index: 1000;
-}
-
-.dock__content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 80px;
-  margin: 15px;
-  border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(8px);
-}
-
-/* App Icon */
-.app-icon__wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-
-  flex-direction: column;
-  width: 55px;
-  height: 55px;
-  margin: 0 15px;
-  cursor: pointer;
-  transition: height 0.3s, width 0.3s;
-}
-
-.app-icon__content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-}
-
-.app-icon__icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  height: 80%;
-  margin: 0;
-}
-
-.app-icon__icon-wrapper p {
-  font-size: 28px;
-  transition: font-size 0.3s;
-}
-
-.app-icon__indicator {
-  display: none;
-  flex-shrink: 0;
-  width: 4px;
-  height: 4px;
-  border-radius: 10px;
-}
-
-.app-icon__text {
-  display: absolute;
-  visibility: hidden;
-  margin-top: -110px;
-  padding: 3px 10px;
-  font-size: 12px;
-  text-align: center;
-  white-space: nowrap;
-  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-@media (min-width: 640px) { 
-  /* Dock */
-  .dock {
-    height: 75px;
+@layer utilities {
+  .flex-c-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
-  .dock__content {
-    align-items: flex-end;
-    height: 65px;
-    width: unset;
-    margin: 0 0 10px 0;
-    padding: 0 10px 5px;
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.35);
-    border: 1px solid rgba(255,255,255, 0.15);
-  }
-
-  /* App Icon */
-  .app-icon__wrapper {
-    width: 50px;
-    height: 50px;
-    margin: 3px 2px;
-  }
-
-  .app-icon__wrapper:hover {
-    height: 70px;
-    width: 70px;
-  }
-
-  .app-icon__wrapper:hover > p {
-    visibility: visible;
-  }
-
-  .app-icon__content {
-    width: 85%;
-    height: 85%;
-    margin: 5px 0;
-    border-radius: 8px;
-    box-shadow: inset 0px 10px 3px -10px rgba(255, 255, 255, 0.500);
-  }
-
-  .app-icon__indicator {
-    display: block;
-  }
-}  
+}

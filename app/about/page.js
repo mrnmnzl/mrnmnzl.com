@@ -4,7 +4,7 @@ import portrait from "../../public/images/portrait.jpg";
 
 export default function About() {
   return (
-    <main className="about shadow-window bg-window-light text-text-light dark:bg-window-dark dark:text-text-dark">
+    <main className="about-page shadow-window bg-window-light text-text-light dark:bg-window-dark dark:text-text-dark">
       <header className="hidden sm:flex flex-none">
         <Dots location="/" red activeDots={1} />
       </header>

@@ -1,14 +1,28 @@
 import React from "react";
 import AppIcon from "./app-icon";
+import {
+  MdAlternateEmail,
+  MdOutlineSettings,
+  MdInfoOutline,
+  MdComputer,
+} from "react-icons/md";
 
 const Dock = () => {
   return (
-    <footer className="dock">
-      <div className="dock__content bg-dock-mobile dark:bg-dock-mobile-dark sm:bg-dock dark:sm:bg-dock-dark">
-        <AppIcon icon="💻" location="/projects" text="Projects" />
-        <AppIcon icon="ℹ️" location="/about" text="About Marion" />
-        <AppIcon icon="📧" location="mailto:marion.menzl@me.com" text="Mail" />
-        <AppIcon icon="⚙️" location="/settings" text="Settings" />
+    <footer className="relative flex-c-c w-full z-50 sm:h-[75px]">
+      <div className="dock bg-dock-mobile dark:bg-dock-mobile-dark sm:bg-dock dark:sm:bg-dock-dark">
+        <AppIcon location="/projects" text="Projects">
+          <MdComputer className="h-full w-full text-gray-800" />
+        </AppIcon>
+        <AppIcon location="/about" text="About Marion">
+          <MdInfoOutline className="h-full w-full text-gray-800" />
+        </AppIcon>
+        <AppIcon location="mailto:marion.menzl@me.com" text="Mail">
+          <MdAlternateEmail className="h-full w-full text-gray-800" />
+        </AppIcon>
+        <AppIcon icon="⚙️" location="/settings" text="Settings">
+          <MdOutlineSettings className="h-full w-full text-gray-800" />
+        </AppIcon>
       </div>
     </footer>
   );
