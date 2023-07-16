@@ -22,7 +22,7 @@ const Dot = ({ location, active, red, yellow, green }) => {
       }
     ></a>
   ) : (
-    <div className="h-[12px] w-[12px] rounded-2xl mr-[8px] shadow-dot"></div>
+    <div className="h-[12px] w-[12px] rounded-2xl mr-[8px] shadow-dot bg-dot-bg"></div>
   );
 };
 

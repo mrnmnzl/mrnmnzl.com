@@ -22,6 +22,7 @@ module.exports = {
         "dock-dark": "rgba(158, 158, 158, 0.2)",
         "dock-mobile": "rgba(255, 255, 255, 0.4)",
         "dock-mobile-dark": "rgba(0,0,0, 0.3)",
+        "dot-bg": "rgb(214	213	213	)",
         "text-light": "rgba(72, 72, 72, 1)",
         "text-dark": "rgba(233, 233, 233, 1)",
         "window-light": "rgba(240, 240, 240, 1)",
