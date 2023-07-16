@@ -26,6 +26,18 @@
     z-index: 1001;
   }
 
+  .settings-page {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    display: flex;
+    width: 600px;
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 100;
+  }
+
   .dock {
     display: flex;
     align-items: center;

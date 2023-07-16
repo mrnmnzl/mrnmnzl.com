@@ -30,6 +30,7 @@ module.exports = {
         "text-dark": "rgba(233, 233, 233, 1)",
         "window-light": "rgba(240, 240, 240, 1)",
         "window-dark": "rgba(40, 40, 40, 1)",
+        "window-border-light": "rgba(222, 225, 231, 1)",
       },
     },
   },
