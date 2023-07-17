@@ -1,22 +1,38 @@
 import Dots from "@/components/dots";
 import Link from "next/link";
-import { MdDarkMode } from "react-icons/md";
+import { MdDarkMode, MdFormatPaint, MdOutlineTagFaces } from "react-icons/md";
 
 export default function Settings({ children, title }) {
   return (
-    <main className="settings-page bg-window-light text-text-light">
-      <div className="w-52 border-r-2 border-window-border-light">
+    <main className="settings-page shadow-window">
+      <div className="w-[20rem] border-r-[1px] backdrop-blur border-window-border-light bg-glass-window-light">
         <div className="p-5">
-          <Dots green yellow red activeDots={3} />
+          <Dots location={"/"} red yellow green activeDots={3} />
         </div>
-        <a
-          href="/settings/appearance"
-          className="flex items-center mx-3 px-1 py-1 rounded text-[13px] bg-zinc-300"
+        <Link
+          href="/settings/user"
+          className="flex items-center mx-3 px-1 py-1 rounded text-[13px] text-text-light"
         >
-          <MdDarkMode className="h-6 w-6 mr-" /> Appearance
-        </a>
+          <MdOutlineTagFaces className="h-6 w-6 mr-1" /> Marion Menzl
+        </Link>
+        <Link
+          href="/settings/appearance"
+          className="flex items-center mx-3 px-1 py-1 rounded text-[13px] bg-highlight-dark text-text-dark"
+        >
+          <MdDarkMode className="h-6 w-6 mr-1" />
+          Appearance
+        </Link>
+        <Link
+          href="/settings/wallpaper"
+          className="flex items-center mx-3 px-1 py-1 rounded text-[13px] text-text-light"
+        >
+          <MdFormatPaint className="h-6 w-6 mr-1" />
+          Wallpaper
+        </Link>
       </div>
-      <div className="px-6">{children}</div>
+      <div className="px-6 w-full bg-window-light text-text-light">
+        {children}
+      </div>
     </main>
   );
 }
