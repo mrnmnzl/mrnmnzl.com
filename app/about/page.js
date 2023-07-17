@@ -12,24 +12,20 @@ export default function About() {
         <div className="h-[120px] w-[120px] rounded-full overflow-hidden mb-8">
           <Image src={portrait} alt="Portrait of Marion" placeholder="blur" />
         </div>
-        <h1 className="text-2xl font-bold">Marion Menzl</h1>
-        <p className="text-[11px] text-gray-400 mb-5">Salzburg, Austria</p>
+        <h1 className="text-2xl font-bold">mrnmnzl.com</h1>
+        <p className="text-[11px] text-gray-400 mb-5">by Marion Menzl</p>
         <table className="mb-5 text-[11px]">
           <tr>
-            <td className="pr-2 text-right">Chip</td>
-            <td className="text-slate-500">Apple M1 Pro</td>
+            <td className="pr-2 text-right">Framework</td>
+            <td className="text-slate-500">Next.js</td>
           </tr>
           <tr>
-            <td className="pr-2 text-right">Memory</td>
-            <td className="text-slate-500">Good</td>
+            <td className="pr-2 text-right">Version</td>
+            <td className="text-slate-500">13.4.9</td>
           </tr>
           <tr>
-            <td className="pr-2 text-right">Serial number</td>
-            <td className="text-slate-500">abc</td>
-          </tr>
-          <tr>
-            <td className="pr-2 text-right">marionOS</td>
-            <td className="text-slate-500">Version 1.26.0</td>
+            <td className="pr-2 text-right">Styling</td>
+            <td className="text-slate-500">Tailwind CSS</td>
           </tr>
         </table>
         <button className="text-sm py-[1px] px-[10px] bg-button-light dark:bg-button-dark rounded">
