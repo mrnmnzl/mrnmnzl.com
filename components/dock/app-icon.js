@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const Icon = ({ location, icon, text, children }) => {
   const path = usePathname();
-  const isActive = path === location;
+  const isActive = path.includes(location);
 
   return (
     <Link href={location} className="border-r-6">
