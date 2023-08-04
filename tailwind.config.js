@@ -32,10 +32,12 @@ module.exports = {
         "window-dark": "rgba(40, 40, 40, 1)",
         "window-border-light": "rgba(150, 150, 150, 0.3)",
         "glass-window-light": "rgba(240, 240, 240, 0.7)",
+        "glass-window-dark": "rgba(40, 40, 40, 0.7)",
         highlight: "rgb(255, 188, 31	)",
         "highlight-dark": "rgb(172, 122, 8, 0.9)",
       },
     },
   },
+  darkMode: "class",
   plugins: [],
 };
