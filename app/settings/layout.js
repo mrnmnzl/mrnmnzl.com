@@ -13,24 +13,24 @@ export default function Settings({ children, title }) {
           href="/settings/user"
           className="flex items-center mx-3 px-1 py-1 rounded text-[13px] text-text-light"
         >
-          <MdOutlineTagFaces className="h-6 w-6 mr-1" /> Marion Menzl
+          <MdOutlineTagFaces className="w-6 h-6 mr-1" /> Marion Menzl
         </Link>
         <Link
           href="/settings/appearance"
           className="flex items-center mx-3 px-1 py-1 rounded text-[13px] bg-highlight-dark text-text-dark"
         >
-          <MdDarkMode className="h-6 w-6 mr-1" />
+          <MdDarkMode className="w-6 h-6 mr-1" />
           Appearance
         </Link>
         <Link
           href="/settings/wallpaper"
           className="flex items-center mx-3 px-1 py-1 rounded text-[13px] text-text-light"
         >
-          <MdFormatPaint className="h-6 w-6 mr-1" />
+          <MdFormatPaint className="w-6 h-6 mr-1" />
           Wallpaper
         </Link>
       </div>
-      <div className="px-6 w-full bg-window-light text-text-light">
+      <div className="w-full px-6 bg-window-light text-text-light">
         {children}
       </div>
     </main>

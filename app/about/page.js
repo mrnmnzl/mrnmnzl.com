@@ -5,10 +5,10 @@ import portrait from "../../public/images/portrait.jpg";
 export default function About() {
   return (
     <main className="about-page shadow-window bg-window-light text-text-light dark:bg-window-dark dark:text-text-dark">
-      <header className="hidden sm:flex flex-none">
+      <header className="flex-none hidden sm:flex">
         <Dots location="/" red activeDots={1} />
       </header>
-      <div className="scale-125 sm:scale-100 flex-1 flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center flex-1 scale-125 sm:scale-100">
         <div className="h-[120px] w-[120px] rounded-full overflow-hidden mb-8">
           <Image src={portrait} alt="Portrait of Marion" placeholder="blur" />
         </div>
@@ -34,9 +34,9 @@ export default function About() {
         <div className="absolute bottom-[150px] sm:hidden">
           <a
             href="/"
-            className="h-8 w-8 bg-slate-500 rounded-3xl flex items-center justify-center"
+            className="flex items-center justify-center w-8 h-8 bg-slate-500 rounded-3xl"
           >
-            <span className="text-white font-bold">✕</span>
+            <span className="font-bold text-white">✕</span>
           </a>
         </div>
       </div>

@@ -1,7 +1,7 @@
 export default function Appearance() {
   return (
     <>
-      <div className="py-3 px-1 text-text-light font-semibold">Appearance</div>
+      <div className="px-1 py-3 font-semibold text-text-light">Appearance</div>
     </>
   );
 }

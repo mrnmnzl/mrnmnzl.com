@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="flex flex-col w-full h-full absolute top-0">
+      <body className="absolute top-0 flex flex-col w-full h-full">
         <MenuBar title={metadata.title} />
         <Desktop>{children}</Desktop>
         <Dock />

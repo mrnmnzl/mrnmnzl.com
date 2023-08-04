@@ -18,7 +18,7 @@ const Icon = ({ location, icon, text, children }) => {
         ) : (
           <div className="hidden sm:block shrink-0 w-1 h-1 rounded-[10px] bg-transparent"></div>
         )}
-        <p className="app-icon-tool-tip group-hover:visible text-black dark:text-white bg-app-icon-tool-tip-light dark:bg-app-icon-tool-tip-dark ">
+        <p className="text-black app-icon-tool-tip group-hover:visible dark:text-white bg-app-icon-tool-tip-light dark:bg-app-icon-tool-tip-dark ">
           {text}
         </p>
       </div>

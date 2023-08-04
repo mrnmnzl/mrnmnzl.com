@@ -4,7 +4,7 @@ import Dot from "./dot";
 
 const Dots = ({ location, red, yellow, green, activeDots }) => {
   return (
-    <div className="group flex">
+    <div className="flex group">
       <Dot red={red} location={location} active={!!activeDots} />
       <Dot yellow={yellow} location={location} active={activeDots > 1} />
       <Dot green={green} location={location} active={activeDots > 2} />
