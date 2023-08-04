@@ -1,36 +1,22 @@
 import Dots from "@/components/dots";
-import Link from "next/link";
-import { MdDarkMode, MdFormatPaint, MdOutlineTagFaces } from "react-icons/md";
+import { MdDarkMode, MdOutlineTagFaces } from "react-icons/md";
+import SettingsNavItem from "@/components/settings-nav-item";
 
-export default function Settings({ children, title }) {
+export default function Settings({ children }) {
   return (
     <main className="settings-page shadow-window">
-      <div className="w-[20rem] border-r-[1px] backdrop-blur border-window-border-light bg-glass-window-light">
+      <div className="w-[20rem] border-r-[1px] backdrop-blur border-window-border-light bg-glass-window-light dark:bg-glass-window-dark">
         <div className="p-5">
           <Dots location={"/"} red yellow green activeDots={3} />
         </div>
-        <Link
-          href="/settings/user"
-          className="flex items-center mx-3 px-1 py-1 rounded text-[13px] text-text-light"
-        >
-          <MdOutlineTagFaces className="w-6 h-6 mr-1" /> Marion Menzl
-        </Link>
-        <Link
-          href="/settings/appearance"
-          className="flex items-center mx-3 px-1 py-1 rounded text-[13px] bg-highlight-dark text-text-dark"
-        >
+        <SettingsNavItem location="/settings/user" title="Marion Menzl">
+          <MdOutlineTagFaces className="w-6 h-6 mr-1" />
+        </SettingsNavItem>
+        <SettingsNavItem location="/settings/appearance" title="Appearance">
           <MdDarkMode className="w-6 h-6 mr-1" />
-          Appearance
-        </Link>
-        <Link
-          href="/settings/wallpaper"
-          className="flex items-center mx-3 px-1 py-1 rounded text-[13px] text-text-light"
-        >
-          <MdFormatPaint className="w-6 h-6 mr-1" />
-          Wallpaper
-        </Link>
+        </SettingsNavItem>
       </div>
-      <div className="w-full px-6 bg-window-light text-text-light">
+      <div className="w-full px-6 bg-window-light dark:bg-window-dark text-text-light dark:text-text-dark">
         {children}
       </div>
     </main>
