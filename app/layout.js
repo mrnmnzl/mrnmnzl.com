@@ -1,7 +1,7 @@
-import MenuBar from "@/components/menu-bar";
-import Desktop from "@/components/desktop";
-import Dock from "@/components/dock";
-import Providers from "@/components/providers";
+import { MenuBar } from "@/components/menu-bar";
+import { Desktop } from "@/components/desktop";
+import { Dock } from "@/components/dock";
+import { Providers } from "@/components/providers";
 import "./globals.css";
 
 export const metadata = {

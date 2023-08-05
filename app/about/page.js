@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Dots from "@/components/dots";
+import { Dots } from "@/components/dots";
 import portrait from "../../public/images/portrait.jpg";
 
 export default function About() {

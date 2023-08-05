@@ -12,4 +12,4 @@ const Desktop = ({ children }) => {
   );
 };
 
-export default Desktop;
+export { Desktop };

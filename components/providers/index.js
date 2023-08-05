@@ -5,4 +5,4 @@ function Providers({ children }) {
   return <ThemeProvider attribute="class">{children}</ThemeProvider>;
 }
 
-export default Providers;
+export { Providers };

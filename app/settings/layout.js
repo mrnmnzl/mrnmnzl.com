@@ -1,6 +1,6 @@
-import Dots from "@/components/dots";
+import { Dots } from "@/components/dots";
 import { MdDarkMode, MdOutlineTagFaces } from "react-icons/md";
-import SettingsNavItem from "@/components/settings-nav-item";
+import { SettingsNavItem } from "@/components/settings-nav-item";
 
 export default function Settings({ children }) {
   return (

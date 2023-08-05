@@ -21,4 +21,4 @@ const SettingsNavItem = ({ location, title, children }) => {
   );
 };
 
-export default SettingsNavItem;
+export { SettingsNavItem };

@@ -1,5 +1,5 @@
 import React from "react";
-import AppIcon from "./app-icon";
+import { AppIcon } from "./app-icon";
 import {
   MdAlternateEmail,
   MdOutlineSettings,
@@ -28,4 +28,4 @@ const Dock = () => {
   );
 };
 
-export default Dock;
+export { Dock };

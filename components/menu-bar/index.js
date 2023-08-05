@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Icon from "./icon";
-import Clock from "./clock";
+import { Icon } from "./icon";
+import { Clock } from "./clock";
 import {
   FaTiktok,
   FaInstagram,
@@ -41,4 +41,4 @@ const MenuBar = ({ title }) => {
   );
 };
 
-export default MenuBar;
+export { MenuBar };

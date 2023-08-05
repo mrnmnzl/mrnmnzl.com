@@ -37,4 +37,4 @@ const Clock = () => {
   return <span className="m-0 text-[13px]">{showTime()}</span>;
 };
 
-export default Clock;
+export { Clock };

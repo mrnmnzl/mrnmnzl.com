@@ -6,4 +6,4 @@ const Icon = ({ url = "/", children }) => (
   </div>
 );
 
-export default Icon;
+export { Icon };

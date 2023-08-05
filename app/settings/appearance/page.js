@@ -1,6 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 export default function Appearance() {
   const { systemTheme, theme, setTheme } = useTheme();

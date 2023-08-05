@@ -26,4 +26,4 @@ const Dot = ({ location, active, red, yellow, green }) => {
   );
 };
 
-export default Dot;
+export { Dot };

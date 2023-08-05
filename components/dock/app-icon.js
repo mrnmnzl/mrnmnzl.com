@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const Icon = ({ location, icon, text, children }) => {
+const AppIcon = ({ location, icon, text, children }) => {
   const path = usePathname();
   const isActive = path.includes(location);
 
@@ -26,4 +26,4 @@ const Icon = ({ location, icon, text, children }) => {
   );
 };
 
-export default Icon;
+export { AppIcon };
