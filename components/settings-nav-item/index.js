@@ -10,7 +10,9 @@ const SettingsNavItem = ({ location, title, children }) => {
 
   const classes = clsx(
     "flex items-center mx-3 px-1 py-1 rounded text-[13px]",
-    isActive ? "bg-highlight-dark text-text-dark" : "text-text-light"
+    isActive
+      ? "bg-highlight-dark text-text-dark"
+      : "text-text-light dark:text-text-dark"
   );
 
   return (
