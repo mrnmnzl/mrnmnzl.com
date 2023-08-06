@@ -1,10 +1,33 @@
 "use client";
+import { useState } from "react";
 import { useTheme } from "next-themes";
-import { clsx } from "clsx";
+import { SettingsHighlightButton } from "@/components/settings-highlight-button";
 
 export default function Appearance() {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
+  const { setTheme } = useTheme();
+  const [highlightColors, setHighlightColors] = useState([
+    {
+      title: "Red",
+      color: "bg-red-400",
+      active: true,
+    },
+    {
+      title: "Yellow",
+      color: "bg-yellow-400",
+      active: false,
+    },
+    {
+      title: "Green",
+      color: "bg-green-400",
+      active: false,
+    },
+    {
+      title: "Blue",
+      color: "bg-blue-400",
+      active: false,
+    },
+  ]);
+
   function handleChooseDarkTheme() {
     setTheme("dark");
   }
@@ -13,15 +36,17 @@ export default function Appearance() {
     setTheme("light");
   }
 
-  const lightClasses = clsx(
-    "w-24 h-16 bg-gray-100 rounded",
-    currentTheme === "light" ? "border-2 border-red-400" : ""
-  );
-
-  const darkClasses = clsx(
-    "w-24 h-16 bg-gray-500 rounded",
-    currentTheme === "dark" ? "border-2 border-red-400" : ""
-  );
+  function handleColorClick(color) {
+    const newColors = highlightColors.map((highlightColor) => {
+      if (highlightColor.color === color) {
+        highlightColor.active = true;
+      } else {
+        highlightColor.active = false;
+      }
+      return highlightColor;
+    });
+    setHighlightColors(newColors);
+  }
 
   return (
     <>
@@ -31,36 +56,29 @@ export default function Appearance() {
           <div className="">Appearance</div>
           <div className="flex">
             <button className="mr-4" onClick={handleChooseLightTheme}>
-              <div className={lightClasses}></div>
+              <div className="w-24 h-16 bg-gray-100 border-2 border-red-400 rounded dark:border-none"></div>
               <p className="text-sm text-center">Light</p>
             </button>
             <button onClick={handleChooseDarkTheme}>
-              <div className={darkClasses}></div>
+              <div className="w-24 h-16 bg-gray-500 rounded dark:border-2 dark:border-red-400"></div>
               <p className="text-sm text-center">Dark</p>
             </button>
           </div>
         </div>
         <div className="flex justify-between p-3">
-          <div className="">Highlight Color</div>
+          <div>Highlight Color</div>
           <div className="flex">
-            <button className="flex flex-col items-center w-8 mr-2">
-              <div className="flex items-center justify-center w-6 h-6 bg-yellow-400 rounded-xl">
-                <div className="w-2 h-2 bg-white rounded-xl shadow-dot"></div>
-              </div>
-              <p className="mt-2 text-sm">Yellow</p>
-            </button>
-            <button className="flex flex-col items-center w-8 mr-2">
-              <div className="flex items-center justify-center w-6 h-6 bg-red-400 rounded-xl">
-                <div className="w-2 h-2 bg-white rounded-xl shadow-dot"></div>
-              </div>
-              <p className="mt-2 text-sm">Red</p>
-            </button>
-            <button className="flex flex-col items-center w-8 mr-2">
-              <div className="flex items-center justify-center w-6 h-6 bg-blue-400 rounded-xl">
-                <div className="w-2 h-2 bg-white rounded-xl shadow-dot"></div>
-              </div>
-              <p className="mt-2 text-sm">Blue</p>
-            </button>
+            {highlightColors.map((color, index) => {
+              return (
+                <SettingsHighlightButton
+                  key={index}
+                  active={color.active}
+                  title={color.title}
+                  color={color.color}
+                  handleColorClick={handleColorClick}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
