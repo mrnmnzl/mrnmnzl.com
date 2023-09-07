@@ -30,9 +30,11 @@ const project = {
       validation: (rule) => rule.required(),
     }),
     {
-      name: "logo",
-      title: "Project Logo",
-      type: "image",
+      name: "icon",
+      title: "Emoji",
+      type: "string",
+      description: "Choose an emoji to represent this project",
+      validation: (Rule) => Rule.max(3).warning(`Choose only one emoji.`),
     },
     {
       name: "projectUrl",
@@ -48,7 +50,7 @@ const project = {
       fields: [
         {
           name: "alt",
-          title: "Alt",
+          title: "Alternative text",
           type: "string",
         },
       ],
@@ -65,6 +67,23 @@ const project = {
       title: "Date",
       type: "date",
       description: "The date this project was completed",
+    },
+    {
+      name: "technologies",
+      title: "Technologies",
+      type: "array",
+      description: "Add the technologies used in this project",
+      of: [{ type: "string" }],
+      options: {
+        layout: "tags",
+      },
+    },
+    {
+      name: "images",
+      title: "Images",
+      type: "array",
+      description: "Add screenshots and other images for this project",
+      of: [{ type: "image" }],
     },
   ],
 };

@@ -1,14 +1,19 @@
 import { Dots } from "@/components/dots";
+import { fetchProjects } from "../../sanity/utils/fetchProjects";
+import { ProjectsLinksList } from "@/components/projects-links-list";
 
-export default function Layout({ children }) {
+export default async function Layout({ children }) {
+  const projects = await fetchProjects();
+
   return (
     <main className="projects-page">
-      <div className="w-[full] border-r-[1px] backdrop-blur border-window-border-light bg-glass-window-light dark:bg-glass-window-dark">
-        <div className="p-5">
+      <div className="w-[300px] border-r-[1px] backdrop-blur border-window-border-light bg-projects-sidebar dark:bg-projects-sidebar-dark">
+        <div>
           <Dots location={"/"} red yellow green activeDots={3} />
+          <ProjectsLinksList projects={projects} />
         </div>
       </div>
-      <div className="w-full px-6 bg-window-light dark:bg-window-dark text-text-light dark:text-text-dark">
+      <div className="w-full bg-projects-main dark:bg-projects-main-dark text-text-light dark:text-text-dark">
         {children}
       </div>
     </main>

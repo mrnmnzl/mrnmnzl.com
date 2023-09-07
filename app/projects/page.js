@@ -1,3 +1,3 @@
-export default function Projects() {
-  return <main>Projects</main>;
+export default async function Projects() {
+  return <div>Marion</div>;
 }
