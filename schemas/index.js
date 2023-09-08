@@ -1,3 +1,4 @@
 import project from "./documents/project";
+import codingExp from "./singletons/codingExp";
 
-export const schema = { types: [project] };
+export const schemaTypes = [project, codingExp];
