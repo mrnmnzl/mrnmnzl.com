@@ -40,7 +40,7 @@ module.exports = {
         "projects-sidebar": "rgba(245, 245, 242, 1)",
         "projects-sidebar-dark": "rgba(24, 24, 24, 1)",
         "projects-main": "rgba(255, 255, 255, 1)",
-        "projects-main-dark": "rgba(19, 19, 19, 1)",
+        "projects-main-dark": "rgba(21, 21, 21, 1)",
         "projects-link": "rgba(233, 233, 230, 1)",
         "projects-link-dark": "rgba(150, 150, 150, 0.3)",
         "projects-text": "rgba(42, 40, 36, 1)",
