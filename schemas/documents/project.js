@@ -82,8 +82,27 @@ const project = {
       name: "images",
       title: "Images",
       type: "array",
-      description: "Add screenshots and other images for this project",
-      of: [{ type: "image" }],
+      of: [
+        {
+          type: "object",
+          name: "impression",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+            },
+            {
+              name: "image",
+              type: "image",
+              title: "Image",
+              options: {
+                hotspot: true,
+              },
+            },
+          ],
+        },
+      ],
     },
   ],
 };
