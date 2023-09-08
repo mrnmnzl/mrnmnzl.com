@@ -1,44 +1,38 @@
 import { PortableText } from "@portabletext/react";
 import { fetchProject } from "@/sanity/utils/fetchProjects";
+import { Title } from "@/components/ProjectComponents/Title";
+import { Subtitle } from "@/components/ProjectComponents/Subtitle";
+import { TopBar } from "@/components/ProjectComponents/TopBar";
+import Image from "next/image";
 
-export default async function Page({ params }) {
+const Page = async ({ params }) => {
   const project = await fetchProject(params.slug);
 
   const components = {
     block: {
-      h2: ({ children }) => (
-        <h1 className="mt-4 text-xl font-bold">{children}</h1>
-      ),
+      h2: ({ children }) => <Subtitle>{children}</Subtitle>,
+      normal: ({ children }) => <p className="mb-4">{children}</p>,
     },
   };
 
-  function getYear(date) {
-    const parsedDate = new Date(date);
-    return parsedDate.getFullYear();
-  }
-
   return (
     <div className="flex flex-col h-full overflow-y-scroll">
-      <p className="flex-none py-2 pl-4">
-        {project.icon} {project.name}
-      </p>
-      <img
-        className="flex-none object-cover w-full h-auto"
+      <TopBar title={project.name} icon={project.icon} />
+      <Image
         src={project.coverImageUrl}
         alt={project.coverImageAlt}
-      ></img>
-
+        width={800}
+        height={300}
+        className="w-full min-h-[300px] object-cover"
+      />
       <div className="flex justify-center flex-1 w-full">
         <div className="max-w-[800px] mx-8 pb-12">
           <p className="mb-12 -mt-8 text-6xl">{project.icon}</p>
-          <h1 className="mb-4 text-4xl font-bold">
-            {project.name}{" "}
-            <span className="text-base">({getYear(project.date)})</span>
-          </h1>
-          <p>{project.tagline}</p>
+          <Title title={project.name} date={project.date} />
+          <p className="italic">{project.tagline}</p>
           <PortableText value={project.description} components={components} />
           <div className="mt-4">
-            <h2 className="mb-2 text-xl font-bold">Technologies</h2>
+            <Subtitle title="Technologies" />
             {project.technologies?.map((technology, i) => (
               <span
                 key={i}
@@ -52,4 +46,6 @@ export default async function Page({ params }) {
       </div>
     </div>
   );
-}
+};
+
+export default Page;
