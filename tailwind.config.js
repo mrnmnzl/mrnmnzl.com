@@ -12,6 +12,8 @@ module.exports = {
         dot: "inset 0px 0px 0px 1px rgba(0, 0, 0, 0.07)",
         window: "0px 11px 33px rgba(0, 0, 0, 0.2)",
         "app-icon": "inset 0px 10px 3px -10px rgba(255, 255, 255, 0.5)",
+        cv: "0px 0px 8px 0px rgba(0,0,0,0.3)",
+        "window-bar": "0px 0px 4px 0px rgba(0,0,0,0.2)",
       },
       colors: {
         "app-icon-tool-tip-light": "rgba(255, 255, 255, 0.5)",
@@ -47,6 +49,12 @@ module.exports = {
         "projects-text-dark": "rgba(202, 202, 202, 1)",
         "projects-title": "rgba(132, 132, 127, 1)",
         "projects-title-dark": "rgba(76, 76, 76, 1)",
+
+        "cv-bar": "rgba(252, 252, 252, 1)",
+        "cv-bar-dark": "rgba(80, 80, 80, 1)",
+        "cv-bg": "rgba(155, 155, 155, 1)",
+        "cv-text": "rgba(59, 59, 59, 1)",
+        "cv-text-dark": "rgba(235, 235, 235, 1)",
       },
     },
   },

@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 import { MenuBar } from "@/components/menu-bar";
-import { Desktop } from "@/components/desktop";
+import { Desktop } from "@/components/Desktop";
 import { Dock } from "@/components/dock";
 import { Providers } from "@/components/providers";
 import "./globals.css";
