@@ -8,7 +8,7 @@ import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { BiCode } from "react-icons/bi";
 import { apiVersion, dataset, projectId } from "./sanity/env";
-import { schemaTypes } from "./schemas/index";
+import { schemaTypes } from "./sanity/schemas/index";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 const singletonTypes = new Set(["codingExp"]);
