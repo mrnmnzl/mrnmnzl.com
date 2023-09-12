@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Dots } from "@/components/Dots";
-import portrait from "../../public/images/portrait.jpg";
+import { fetchAbout } from "@/sanity/utils/fetchAbout";
 
-export default function About() {
+export default async function About() {
+  const aboutData = await fetchAbout();
   return (
     <main className="about-page shadow-window bg-window-light text-text-light dark:bg-window-dark dark:text-text-dark">
       <header className="flex-none hidden sm:flex">
@@ -10,22 +11,30 @@ export default function About() {
       </header>
       <div className="flex flex-col items-center justify-center flex-1 scale-125 sm:scale-100">
         <div className="h-[120px] w-[120px] rounded-full overflow-hidden mb-8">
-          <Image src={portrait} alt="Portrait of Marion" placeholder="blur" />
+          <Image
+            src={aboutData.portrait.asset.url}
+            alt="Portrait of Marion"
+            placeholder="blur"
+            blurDataURL={aboutData.portrait.asset.metadata.lqip}
+            layout="responsive"
+            width={aboutData.portrait.asset.metadata.dimensions.width}
+            height={aboutData.portrait.asset.metadata.dimensions.height}
+          />
         </div>
-        <h1 className="text-2xl font-bold">mrnmnzl.com</h1>
-        <p className="text-[11px] text-gray-400 mb-5">by Marion Menzl</p>
+        <h1 className="text-2xl font-bold">{aboutData.title}</h1>
+        <p className="text-[11px] text-gray-400 mb-5">{aboutData.subtitle}</p>
         <table className="mb-5 text-[11px]">
           <tr>
             <td className="pr-2 text-right">Framework</td>
-            <td className="text-slate-500">Next.js</td>
+            <td className="text-slate-500">{aboutData.framework}</td>
           </tr>
           <tr>
             <td className="pr-2 text-right">Version</td>
-            <td className="text-slate-500">13.4.9</td>
+            <td className="text-slate-500">{aboutData.version}</td>
           </tr>
           <tr>
             <td className="pr-2 text-right">Styling</td>
-            <td className="text-slate-500">Tailwind CSS</td>
+            <td className="text-slate-500">{aboutData.styling}</td>
           </tr>
         </table>
         <button className="text-sm py-[1px] px-[10px] bg-button-light dark:bg-button-dark rounded">
