@@ -1,4 +1,4 @@
-const project = {
+const codingExp = {
   name: "codingExp",
   title: "Coding Experience",
   description: "Coding Experience Schema",
@@ -102,4 +102,4 @@ const project = {
   ],
 };
 
-export default project;
+export default codingExp;
