@@ -10,12 +10,6 @@ const Desktop = ({ children }) => {
           <DesktopIcon title="cv.pdf" location="/cv">
             <FcDocument className="w-full h-full" />
           </DesktopIcon>
-          <DesktopIcon title="cv.pdf" location="/cv">
-            <FcDocument className="w-full h-full" />
-          </DesktopIcon>
-          <DesktopIcon title="cv.pdf" location="/cv">
-            <FcDocument className="w-full h-full" />
-          </DesktopIcon>
         </div>
       </div>
       {children}
