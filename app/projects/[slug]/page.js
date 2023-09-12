@@ -4,6 +4,7 @@ import { Title } from "@/components/ProjectComponents/Title";
 import { Subtitle } from "@/components/ProjectComponents/Subtitle";
 import { TopBar } from "@/components/ProjectComponents/TopBar";
 import Image from "next/image";
+import { Gallery } from "@/components/ProjectImageGallery";
 
 const Page = async ({ params }) => {
   const project = await fetchProject(params.slug);
@@ -13,6 +14,19 @@ const Page = async ({ params }) => {
       h2: ({ children }) => <Subtitle>{children}</Subtitle>,
       normal: ({ children }) => <p className="mb-4">{children}</p>,
     },
+  };
+
+  const getImages = (images) => {
+    const imageData = images.map((image) => {
+      return {
+        src: image.image.asset.url,
+        width: image.image.asset.metadata.dimensions.width,
+        height: image.image.asset.metadata.dimensions.height,
+        alt: image.alt,
+        blurDataURL: image.image.asset.metadata.lqip,
+      };
+    });
+    return imageData;
   };
 
   return (
@@ -42,6 +56,12 @@ const Page = async ({ params }) => {
               </span>
             ))}
           </div>
+          {project.images?.length > 0 ? (
+            <div className="mt-4">
+              <Subtitle title="Impressions" />
+              <Gallery photos={getImages(project.images)} />
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

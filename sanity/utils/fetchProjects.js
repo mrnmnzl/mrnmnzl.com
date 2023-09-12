@@ -28,8 +28,23 @@ export const fetchProject = async (querySlug) => {
     "coverImageAlt": coverImage.alt,
     description,
     date,
-    technologies
+    technologies,
+    images[] {
+      image {
+        asset-> {
+          url,
+          metadata {
+            dimensions {
+              width,
+              height
+            },
+            lqip
+          }
+        }
+      },
+      alt
     }
+  }
 `;
 
   const project = await client.fetch(query);
