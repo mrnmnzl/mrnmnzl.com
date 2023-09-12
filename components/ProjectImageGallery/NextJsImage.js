@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function NextJsImage({
+function NextJsImage({
   photo,
   imageProps: { alt, title, sizes, className, onClick },
   wrapperStyle,
@@ -16,3 +16,5 @@ export default function NextJsImage({
     </div>
   );
 }
+
+export { NextJsImage };

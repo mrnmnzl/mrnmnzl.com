@@ -1,6 +1,6 @@
 import { Dots } from "@/components/Dots";
 import { fetchCV } from "@/sanity/utils/fetchCV";
-import PDFRenderer from "@/components/PDFRenderer";
+import { PDFRenderer } from "@/components/PDFRenderer";
 
 async function CVPage() {
   const cvData = await fetchCV();

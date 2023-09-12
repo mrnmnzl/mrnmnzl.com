@@ -51,4 +51,4 @@ function PDFRenderer({ url }) {
   );
 }
 
-export default PDFRenderer;
+export { PDFRenderer };
