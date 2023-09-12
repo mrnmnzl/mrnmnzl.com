@@ -53,7 +53,7 @@ const ProjectsLinksList = ({ projects, title, icon }) => {
   };
 
   return (
-    <nav className="mt-4">
+    <nav>
       {renderHomepageLink()}
       <h2 className="px-4 text-sm font-bold text-projects-title dark:text-projects-title-dark">
         Projects

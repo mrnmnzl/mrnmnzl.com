@@ -4,7 +4,7 @@ import { Dot } from "./dot";
 
 const Dots = ({ location, red, yellow, green, activeDots }) => {
   return (
-    <div className="flex pt-5 pl-5 group">
+    <div className="flex py-5 pl-5 group">
       <Dot red={red} location={location} active={!!activeDots} />
       <Dot yellow={yellow} location={location} active={activeDots > 1} />
       <Dot green={green} location={location} active={activeDots > 2} />
