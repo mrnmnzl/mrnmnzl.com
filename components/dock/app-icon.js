@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const AppIcon = ({ location, icon, text, children }) => {
+const AppIcon = ({ location, text, children }) => {
   const path = usePathname();
   const isActive = path.includes(location);
 
