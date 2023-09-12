@@ -9,12 +9,12 @@ import {
 
 const Dock = () => {
   return (
-    <footer className="relative flex-c-c w-full z-50 sm:h-[75px]">
+    <footer className="relative flex-c-c w-full z-[1000] sm:h-[75px]">
       <div className="dock bg-dock-mobile dark:bg-dock-mobile-dark sm:bg-dock dark:sm:bg-dock-dark">
         <AppIcon location="/projects" text="Projects">
           <MdComputer className="w-full h-full text-gray-800" />
         </AppIcon>
-        <AppIcon location="/about" text="About Marion">
+        <AppIcon location="/about" text="About">
           <MdInfoOutline className="w-full h-full text-gray-800" />
         </AppIcon>
         <AppIcon location="mailto:marion.menzl@me.com" text="Mail">
