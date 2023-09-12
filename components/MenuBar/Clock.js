@@ -1,6 +1,17 @@
+"use client";
 import React from "react";
+import { useState, useEffect } from "react";
 
 const Clock = () => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const [time, setTime] = useState(new Date());
+
   const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const month = [
     "Jan",
@@ -17,13 +28,12 @@ const Clock = () => {
     "Dec",
   ];
 
-  function showTime() {
-    let date = new Date();
-    let day = weekday[date.getDay()];
-    let hour = date.getHours();
-    let minute = date.getMinutes();
-    let dayNum = date.getDate();
-    let monthNum = date.getMonth();
+  function formatTime(current) {
+    let day = weekday[current.getDay()];
+    let hour = current.getHours();
+    let minute = current.getMinutes();
+    let dayNum = current.getDate();
+    let monthNum = current.getMonth();
 
     hour = hour < 10 ? "0" + hour : hour;
     minute = minute < 10 ? "0" + minute : minute;
@@ -34,7 +44,7 @@ const Clock = () => {
     return time;
   }
 
-  return <span className="m-0 text-[13px]">{showTime()}</span>;
+  return <span className="m-0 text-[13px]">{formatTime(time)}</span>;
 };
 
 export { Clock };
