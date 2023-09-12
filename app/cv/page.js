@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { pdfjs, Document, Page } from "react-pdf";
-import { Dots } from "@/components/dots";
+import { Dots } from "@/components/Dots";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",

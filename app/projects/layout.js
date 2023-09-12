@@ -1,6 +1,6 @@
-import { Dots } from "@/components/dots";
+import { Dots } from "@/components/Dots";
 import { fetchProjects } from "@/sanity/utils/fetchProjects";
-import { ProjectsLinksList } from "@/components/projects-links-list";
+import { ProjectsLinksList } from "@/components/ProjectLinksList";
 import { fetchCodingExpTitle } from "@/sanity/utils/fetchCodingExp";
 
 export default async function Layout({ children }) {

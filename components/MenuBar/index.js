@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Icon } from "./icon";
-import { Clock } from "./clock";
+import { Icon } from "./Icon";
+import { Clock } from "./Clock";
 import {
   FaTiktok,
   FaInstagram,

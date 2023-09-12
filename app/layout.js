@@ -1,8 +1,8 @@
 import { headers } from "next/headers";
-import { MenuBar } from "@/components/menu-bar";
+import { MenuBar } from "@/components/MenuBar";
 import { Desktop } from "@/components/Desktop";
-import { Dock } from "@/components/dock";
-import { Providers } from "@/components/providers";
+import { Dock } from "@/components/Dock";
+import { Providers } from "@/providers";
 import "./globals.css";
 
 export const metadata = {

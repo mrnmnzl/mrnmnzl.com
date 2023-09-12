@@ -1,7 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import { clsx } from "clsx";
-import { SettingsHighlightButton } from "@/components/settings-highlight-button";
+import { SettingsHighlightButton } from "@/components/SettingsHighlightButton";
 import { useStyleStore } from "@/stores/styleStore";
 
 export default function Appearance() {

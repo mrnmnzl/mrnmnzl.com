@@ -1,5 +1,5 @@
 import React from "react";
-import { AppIcon } from "./app-icon";
+import { AppIcon } from "./AppIcon";
 import {
   MdAlternateEmail,
   MdOutlineSettings,
