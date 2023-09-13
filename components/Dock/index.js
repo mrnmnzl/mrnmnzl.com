@@ -1,27 +1,22 @@
 import React from "react";
 import { AppIcon } from "./AppIcon";
-import {
-  MdAlternateEmail,
-  MdOutlineSettings,
-  MdInfoOutline,
-  MdComputer,
-} from "react-icons/md";
+import { FcMultipleDevices, FcInfo, FcSms, FcSettings } from "react-icons/fc";
 
 const Dock = () => {
   return (
     <footer className="relative flex-c-c w-full z-[1000] sm:h-[75px]">
       <div className="dock bg-dock-mobile dark:bg-dock-mobile-dark sm:bg-dock dark:sm:bg-dock-dark">
         <AppIcon location="/projects" text="Projects">
-          <MdComputer className="w-full h-full text-gray-800" />
+          <FcMultipleDevices className="w-full h-full text-gray-800" />
         </AppIcon>
         <AppIcon location="/about" text="About">
-          <MdInfoOutline className="w-full h-full text-gray-800" />
+          <FcInfo className="w-full h-full text-gray-800" />
         </AppIcon>
         <AppIcon location="mailto:marion.menzl@me.com" text="Mail">
-          <MdAlternateEmail className="w-full h-full text-gray-800" />
+          <FcSms className="w-full h-full text-gray-800" />
         </AppIcon>
-        <AppIcon icon="⚙️" location="/settings" text="Settings">
-          <MdOutlineSettings className="w-full h-full text-gray-800" />
+        <AppIcon location="/settings" text="Settings">
+          <FcSettings className="w-full h-full text-gray-800" />
         </AppIcon>
       </div>
     </footer>
