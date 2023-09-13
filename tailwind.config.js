@@ -8,6 +8,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        background: "url('/public/images/background.jpeg')",
+      },
+      keyframes: {
+        unlock: {
+          "0%": { transform: "rotateY(0deg)" },
+          "3%": { transform: "translateY(-3px)" },
+          "100%": { transform: "rotateY(180deg) translateY(-5px)" },
+        },
+      },
+      animation: {
+        unlocking: "unlock 0.8s ease-in-out 0.5s both",
+      },
       boxShadow: {
         dot: "inset 0px 0px 0px 1px rgba(0, 0, 0, 0.07)",
         window: "0px 11px 33px rgba(0, 0, 0, 0.2)",

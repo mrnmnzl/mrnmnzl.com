@@ -4,6 +4,7 @@ import { Desktop } from "@/components/Desktop";
 import { Dock } from "@/components/Dock";
 import { Providers } from "@/providers";
 import "./globals.css";
+import LockScreen from "@/components/LockScreen";
 
 export const metadata = {
   title: "mrnmnzl",
@@ -20,18 +21,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="absolute top-0 flex flex-col w-full h-full">
         <Providers>
-          {
-            // We don't need the layout for the studio
-            isLayoutNeeded ? (
-              <>
-                <MenuBar title={metadata.title} />
-                <Desktop>{children}</Desktop>
-                <Dock />
-              </>
-            ) : (
-              children
-            )
-          }
+          {isLayoutNeeded ? (
+            <>
+              <LockScreen />
+              <MenuBar title={metadata.title} />
+              <Desktop>{children}</Desktop>
+              <Dock />
+            </>
+          ) : (
+            children
+          )}
         </Providers>
       </body>
     </html>
