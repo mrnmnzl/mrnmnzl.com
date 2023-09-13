@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const headersList = headers();
-  const activePath = headersList.get("x-invoke-path");
+  const activePath = headersList.get("x-pathname");
 
   const isLayoutNeeded = !activePath.includes("/studio");
 
