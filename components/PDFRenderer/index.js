@@ -41,7 +41,7 @@ function PDFRenderer({ url }) {
 
   return (
     <Document
-      file={url}
+      file="/documents/cv.pdf"
       onLoadSuccess={onDocumentLoadSuccess}
       className="w-[800px] h-full"
       loading={renderLoader()}
