@@ -2,7 +2,9 @@ import { MenuBar } from "@/components/MenuBar";
 import { Desktop } from "@/components/Desktop";
 import { Dock } from "@/components/Dock";
 import { Providers } from "@/providers";
-import LockScreen from "@/components/LockScreen";
+import { LockScreen } from "@/components/LockScreen";
+import { LockScreenDesktop } from "@/components/LockScreen/LockScreenDesktop";
+import { LockScreenMobile } from "@/components/LockScreen/LockScreenMobile";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
@@ -13,7 +15,10 @@ export default function RootLayout({ children }) {
           <MenuBar title="mrnmnzl" />
           <Desktop>{children}</Desktop>
           <Dock />
-          {/* <LockScreen /> */}
+          <LockScreen>
+            <LockScreenDesktop />
+            <LockScreenMobile />
+          </LockScreen>
         </Providers>
       </body>
     </html>

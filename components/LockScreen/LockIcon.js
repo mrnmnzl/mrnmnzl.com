@@ -41,4 +41,4 @@ const LockIcon = () => {
   );
 };
 
-export default LockIcon;
+export { LockIcon };

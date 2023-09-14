@@ -1,6 +1,6 @@
 import React from "react";
 import { IoIosFlashlight, IoIosCamera } from "react-icons/io";
-import LockIcon from "./LockIcon";
+import { LockIcon } from "./LockIcon";
 
 const LockScreenMobile = () => {
   function getTime() {
@@ -67,4 +67,4 @@ const LockScreenMobile = () => {
   );
 };
 
-export default LockScreenMobile;
+export { LockScreenMobile };

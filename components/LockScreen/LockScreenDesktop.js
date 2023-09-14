@@ -38,4 +38,4 @@ const LockScreenDesktop = async () => {
   );
 };
 
-export default LockScreenDesktop;
+export { LockScreenDesktop };

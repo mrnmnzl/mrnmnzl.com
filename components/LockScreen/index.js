@@ -1,9 +1,7 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import LockScreenDesktop from "./LockScreenDesktop";
-import LockScreenMobile from "./LockScreenMobile";
+import { useState, useEffect } from "react";
 
-const LockScreen = ({}) => {
+const LockScreen = ({ children }) => {
   const [isLocked, setIsLocked] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -12,12 +10,7 @@ const LockScreen = ({}) => {
     return () => clearTimeout(timer);
   }, []);
 
-  return isLocked ? (
-    <>
-      <LockScreenDesktop />
-      <LockScreenMobile />
-    </>
-  ) : null;
+  return isLocked ? children : null;
 };
 
-export default LockScreen;
+export { LockScreen };
