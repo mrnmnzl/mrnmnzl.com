@@ -18,7 +18,6 @@ const LockScreenDesktop = async () => {
             alt="Portrait of Marion"
             placeholder="blur"
             blurDataURL={aboutData.portrait.asset.metadata.lqip}
-            layout="responsive"
             width={aboutData.portrait.asset.metadata.dimensions.width}
             height={aboutData.portrait.asset.metadata.dimensions.height}
           />
