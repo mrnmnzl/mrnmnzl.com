@@ -12,7 +12,7 @@ const Dock = () => {
         <AppIcon location="/about" text="About">
           <FcInfo className="w-full h-full text-gray-800" />
         </AppIcon>
-        <AppIcon location="mailto:marion.menzl@me.com" text="Mail">
+        <AppIcon location="/mail" text="Mail">
           <FcSms className="w-full h-full text-gray-800" />
         </AppIcon>
         <AppIcon location="/settings" text="Settings">
