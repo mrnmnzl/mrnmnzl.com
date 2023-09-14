@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
           <MenuBar title="mrnmnzl" />
           <Desktop>{children}</Desktop>
           <Dock />
-          <LockScreen />
+          {/* <LockScreen /> */}
         </Providers>
       </body>
     </html>
