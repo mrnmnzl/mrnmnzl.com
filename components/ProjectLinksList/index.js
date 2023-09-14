@@ -3,6 +3,7 @@
 import React from "react";
 import { clsx } from "clsx";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const ProjectsLinksList = ({ projects, title, icon }) => {
   const pathname = usePathname();
@@ -19,13 +20,13 @@ const ProjectsLinksList = ({ projects, title, icon }) => {
       );
       return (
         <div key={i} className={activeLinkClasses}>
-          <a
+          <Link
             href={"/projects/" + project.slug.current}
             className=" text-projects-text dark:text-projects-text-dark"
           >
             <span className="mr-2">{project.icon}</span>
             {project.name}
-          </a>
+          </Link>
         </div>
       );
     });
@@ -41,13 +42,13 @@ const ProjectsLinksList = ({ projects, title, icon }) => {
     );
     return (
       <div className={activeLinkClasses}>
-        <a
+        <Link
           href={"/projects/"}
           className=" text-projects-text dark:text-projects-text-dark"
         >
           <span className="mr-2">{icon}</span>
           {title}
-        </a>
+        </Link>
       </div>
     );
   };

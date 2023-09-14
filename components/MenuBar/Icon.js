@@ -1,8 +1,9 @@
 import React from "react";
+import Link from "next/link";
 
 const Icon = ({ url = "/", children }) => (
   <div className="mr-[17px]">
-    <a href={url}>{children}</a>
+    <Link href={url}>{children}</Link>
   </div>
 );
 

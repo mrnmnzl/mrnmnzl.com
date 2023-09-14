@@ -1,5 +1,6 @@
 // Single dot component
 import React from "react";
+import Link from "next/link";
 
 const Dot = ({ location, active, red, yellow, green }) => {
   function renderDot() {
@@ -15,12 +16,12 @@ const Dot = ({ location, active, red, yellow, green }) => {
   }
 
   return red || yellow || green ? (
-    <a
+    <Link
       href={location}
       className={
         "h-[12px] w-[12px] rounded-2xl mr-[8px] shadow-dot " + renderDot()
       }
-    ></a>
+    ></Link>
   ) : (
     <div className="h-[12px] w-[12px] rounded-2xl mr-[8px] shadow-dot bg-dot-bg"></div>
   );

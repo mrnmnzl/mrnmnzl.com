@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Dots } from "@/components/Dots";
 import { fetchAbout } from "@/sanity/utils/fetchAbout";
+import Link from "next/link";
 
 export default async function About() {
   const aboutData = await fetchAbout();
@@ -41,12 +42,12 @@ export default async function About() {
           More Info...
         </button>
         <div className="absolute bottom-[150px] sm:hidden">
-          <a
+          <Link
             href="/"
             className="flex items-center justify-center w-8 h-8 bg-slate-500 rounded-3xl"
           >
             <span className="font-bold text-white">✕</span>
-          </a>
+          </Link>
         </div>
       </div>
     </main>
