@@ -1,3 +1,5 @@
-export default function Home() {
+function SettingsPage() {
   return <div></div>;
 }
+
+export default SettingsPage;

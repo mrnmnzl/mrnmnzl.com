@@ -3,8 +3,9 @@ import { Dots } from "@/components/Dots";
 import { fetchAbout } from "@/sanity/utils/fetchAbout";
 import Link from "next/link";
 
-export default async function About() {
+async function AboutPage() {
   const aboutData = await fetchAbout();
+
   return (
     <main className="about-page shadow-window bg-window-light text-text-light dark:bg-window-dark dark:text-text-dark">
       <header className="flex-none hidden sm:flex">
@@ -55,3 +56,5 @@ export default async function About() {
     </main>
   );
 }
+
+export default AboutPage;

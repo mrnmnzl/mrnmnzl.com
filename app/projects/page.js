@@ -5,7 +5,7 @@ import { Title } from "@/components/ProjectComponents/Title";
 import { Subtitle } from "@/components/ProjectComponents/Subtitle";
 import { List } from "@/components/ProjectComponents/List";
 
-export default async function Page() {
+async function ProjectsPage() {
   const data = await fetchCodingExp();
 
   const components = {
@@ -37,3 +37,5 @@ export default async function Page() {
     </div>
   );
 }
+
+export default ProjectsPage;

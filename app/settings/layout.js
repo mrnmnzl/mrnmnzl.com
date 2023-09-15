@@ -2,7 +2,7 @@ import { Dots } from "@/components/Dots";
 import { MdDarkMode, MdOutlineTagFaces } from "react-icons/md";
 import { SettingsNavItem } from "@/components/SettingsNavItem";
 
-export default function Layout({ children }) {
+function SettingsLayout({ children }) {
   return (
     <main className="settings-page shadow-window">
       <div className="w-[20rem] border-r-[1px] backdrop-blur border-window-border-light bg-glass-window-light dark:bg-glass-window-dark">
@@ -20,3 +20,5 @@ export default function Layout({ children }) {
     </main>
   );
 }
+
+export default SettingsLayout;

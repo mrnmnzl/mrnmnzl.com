@@ -7,7 +7,7 @@ import { LockScreenDesktop } from "@/components/LockScreen/LockScreenDesktop";
 import { LockScreenMobile } from "@/components/LockScreen/LockScreenMobile";
 import "./globals.css";
 
-export default function RootLayout({ children }) {
+function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="absolute top-0 flex flex-col w-full h-full">
@@ -24,3 +24,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+export default RootLayout;

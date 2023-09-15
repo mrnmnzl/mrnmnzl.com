@@ -3,7 +3,7 @@ import { fetchProjects } from "@/sanity/utils/fetchProjects";
 import { ProjectsLinksList } from "@/components/ProjectLinksList";
 import { fetchCodingExpTitle } from "@/sanity/utils/fetchCodingExp";
 
-async function ProjectsLayout({ children }) {
+async function MailLayout({ children }) {
   const projects = await fetchProjects();
   const exp = await fetchCodingExpTitle();
 
@@ -28,4 +28,4 @@ async function ProjectsLayout({ children }) {
   );
 }
 
-export default ProjectsLayout;
+export default MailLayout;

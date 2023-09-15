@@ -4,7 +4,7 @@ import { clsx } from "clsx";
 import { SettingsHighlightButton } from "@/components/SettingsHighlightButton";
 import { useStyleStore } from "@/stores/styleStore";
 
-export default function Appearance() {
+function SettingsAppearancePage() {
   const { setTheme } = useTheme();
   const highlightColors = useStyleStore((state) => state.highlightColors);
   const selectedColor = useStyleStore((state) => state.selectedColor);
@@ -65,3 +65,5 @@ export default function Appearance() {
     </>
   );
 }
+
+export default SettingsAppearancePage;

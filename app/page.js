@@ -1,3 +1,4 @@
-export default function Home() {
+function RootPage() {
   return <main></main>;
 }
+export default RootPage;

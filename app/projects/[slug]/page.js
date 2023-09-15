@@ -6,7 +6,7 @@ import { TopBar } from "@/components/ProjectComponents/TopBar";
 import Image from "next/image";
 import { Gallery } from "@/components/ProjectImageGallery";
 
-const Page = async ({ params }) => {
+const ProjectPage = async ({ params }) => {
   const project = await fetchProject(params.slug);
 
   const components = {
@@ -68,4 +68,4 @@ const Page = async ({ params }) => {
   );
 };
 
-export default Page;
+export default ProjectPage;

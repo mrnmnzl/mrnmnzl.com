@@ -1,4 +1,4 @@
-export default function User() {
+function SettingsUserPage() {
   return (
     <>
       <div className="px-2 py-4 font-semibold text-text-light">
@@ -7,3 +7,5 @@ export default function User() {
     </>
   );
 }
+
+export default SettingsUserPage;
