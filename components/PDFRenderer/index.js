@@ -8,7 +8,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
-function PDFRenderer({ url }) {
+function PDFRenderer() {
   const [numPages, setNumPages] = useState();
 
   function onDocumentLoadSuccess({ numPages }) {
