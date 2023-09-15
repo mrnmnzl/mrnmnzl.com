@@ -25,18 +25,20 @@ export default async function About() {
         <h1 className="text-2xl font-bold">{aboutData.title}</h1>
         <p className="text-[11px] text-gray-400 mb-5">{aboutData.subtitle}</p>
         <table className="mb-5 text-[11px]">
-          <tr>
-            <td className="pr-2 text-right">Framework</td>
-            <td className="text-slate-500">{aboutData.framework}</td>
-          </tr>
-          <tr>
-            <td className="pr-2 text-right">Version</td>
-            <td className="text-slate-500">{aboutData.version}</td>
-          </tr>
-          <tr>
-            <td className="pr-2 text-right">Styling</td>
-            <td className="text-slate-500">{aboutData.styling}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td className="pr-2 text-right">Framework</td>
+              <td className="text-slate-500">{aboutData.framework}</td>
+            </tr>
+            <tr>
+              <td className="pr-2 text-right">Version</td>
+              <td className="text-slate-500">{aboutData.version}</td>
+            </tr>
+            <tr>
+              <td className="pr-2 text-right">Styling</td>
+              <td className="text-slate-500">{aboutData.styling}</td>
+            </tr>
+          </tbody>
         </table>
         <button className="text-sm py-[1px] px-[10px] bg-button-light dark:bg-button-dark rounded">
           More Info...
