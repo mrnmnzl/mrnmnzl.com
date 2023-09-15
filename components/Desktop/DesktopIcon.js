@@ -6,7 +6,7 @@ const DesktopIcon = ({ children, title, location }) => {
     <Link href={location} className="mb-4">
       <div className="flex flex-col w-20 h-20">
         {children}
-        <p className="text-xs font-bold text-center">{title}</p>
+        <p className="text-xs font-bold text-center text-text-dark">{title}</p>
       </div>
     </Link>
   );
