@@ -47,4 +47,4 @@ const Clock = () => {
   return <span className="m-0 text-[13px]">{formatTime(time)}</span>;
 };
 
-export { Clock };
+export default Clock;

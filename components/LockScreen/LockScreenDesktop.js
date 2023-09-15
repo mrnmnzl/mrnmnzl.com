@@ -5,7 +5,7 @@ import { CgCloseO } from "react-icons/cg";
 import { MenuBar } from "../MenuBar";
 import { fetchAbout } from "@/sanity/utils/fetchAbout";
 
-const LockScreenDesktop = async () => {
+async function LockScreenDesktop() {
   const aboutData = await fetchAbout();
 
   return (
@@ -36,6 +36,6 @@ const LockScreenDesktop = async () => {
       </div>
     </div>
   );
-};
+}
 
 export { LockScreenDesktop };

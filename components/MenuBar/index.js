@@ -1,8 +1,10 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import { Icon } from "./Icon";
-import { Clock } from "./Clock";
+import { DynamicClock } from "./DynamicClock";
 import {
   FaTiktok,
   FaInstagram,
@@ -13,8 +15,8 @@ import {
 
 const MenuBar = ({ title, minimal }) => {
   const headerClasses = clsx(
-    "hidden sm:flex items-center justify-between w-full h-[40px]  backdrop-blur text-menu-bar-text dark:text-white",
-    !minimal && "bg-menu-bar-dark dark:bg-menu-bar-dark"
+    "hidden sm:flex items-center justify-between w-full h-[40px] backdrop-blur text-menu-bar-text dark:text-white",
+    { "bg-menu-bar-dark dark:bg-menu-bar-dark": !minimal }
   );
 
   return (
@@ -45,7 +47,9 @@ const MenuBar = ({ title, minimal }) => {
         <Icon url="https://www.tiktok.com/@mrnmnzl">
           <FaTiktok />
         </Icon>
-        <Clock />
+        <div className="w-[110px]">
+          <DynamicClock />
+        </div>
       </div>
     </header>
   );
