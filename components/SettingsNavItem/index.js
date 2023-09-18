@@ -7,7 +7,7 @@ import { useStyleStore } from "@/stores/styleStore";
 
 const SettingsNavItem = ({ location, title, children }) => {
   const path = usePathname();
-  const isActive = path.includes(location);
+  const isActive = path === location;
   const selectedColor = useStyleStore((state) => state.selectedColor);
 
   const classes = clsx(
