@@ -2,6 +2,8 @@ import { Dots } from "@/components/Dots";
 import { fetchCV } from "@/sanity/utils/fetchCV";
 import { PDFRenderer } from "@/components/PDFRenderer";
 import { LuExternalLink, LuDownload } from "react-icons/lu";
+import { IoIosArrowBack } from "react-icons/io";
+import Link from "next/link";
 
 async function CVPage() {
   const cvData = await fetchCV();
@@ -9,8 +11,18 @@ async function CVPage() {
   return (
     <div className="flex flex-col h-full">
       <div className="relative z-50 flex items-center w-full h-auto flex-0 bg-cv-bar dark:bg-cv-bar-dark shadow-window-bar">
-        <Dots location={"/"} red activeDots={3} />
-        <div className="flex flex-col justify-center h-full ml-8">
+        <div className="hidden sm:block">
+          <Dots location={"/"} red activeDots={3} />
+        </div>
+        <div className="pl-6 sm:hidden">
+          <Link
+            href="/"
+            className="inline-flex items-center text-xl text-blue-500"
+          >
+            <IoIosArrowBack className="mr-2" /> <span>Back</span>
+          </Link>
+        </div>
+        <div className="flex flex-col justify-center h-full py-4 ml-8">
           <h1 className="m-0 -mt-1 font-bold text-cv-text dark:text-cv-text-dark">
             cv.pdf
           </h1>

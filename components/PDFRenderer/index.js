@@ -43,7 +43,7 @@ function PDFRenderer() {
     <Document
       file="/documents/cv.pdf"
       onLoadSuccess={onDocumentLoadSuccess}
-      className="w-[800px] h-full"
+      className="sm:w-[800px] h-full"
       loading={renderLoader()}
     >
       {renderPages()}
