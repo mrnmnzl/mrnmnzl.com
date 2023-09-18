@@ -68,6 +68,17 @@ module.exports = {
         "cv-bg": "rgba(155, 155, 155, 1)",
         "cv-text": "rgba(59, 59, 59, 1)",
         "cv-text-dark": "rgba(235, 235, 235, 1)",
+
+        "mail-bar": "rgba(252, 252, 252, 1)",
+        "mail-bar-dark": "rgba(41, 41, 41, 1)",
+        "mail-bg": "rgba(255, 255, 255, 1)",
+        "mail-bg-dark": "rgba(23, 23, 23, 1)",
+        "mail-border": "rgba(215, 215, 215, 1)", // Dark border is black
+
+        "mobile-bg": "rgba(255, 255, 255, 1)",
+        "mobile-bg-dark": "rgba(0, 0, 0, 1)",
+        "mobile-bar": "rgba(245, 245, 245, 1)",
+        "mobile-bar-dark": "rgba(22, 22, 22, 1)",
       },
     },
   },
