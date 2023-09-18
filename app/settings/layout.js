@@ -7,7 +7,7 @@ function SettingsLayout({ children }) {
     <main className="settings-page shadow-window">
       <div className="w-[20rem] border-r-[1px] backdrop-blur border-window-border-light bg-glass-window-light dark:bg-glass-window-dark">
         <Dots location={"/"} red activeDots={3} />
-        <SettingsNavItem location="/settings/user" title="Marion Menzl">
+        <SettingsNavItem location="/settings" title="Marion Menzl">
           <MdOutlineTagFaces className="w-6 h-6 mr-1" />
         </SettingsNavItem>
         <SettingsNavItem location="/settings/appearance" title="Appearance">
