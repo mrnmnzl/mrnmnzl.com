@@ -1,8 +1,9 @@
-import { fetchAbout } from "@/sanity/utils/fetchAbout";
 import Image from "next/image";
+import Link from "next/link";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
-import Link from "next/link";
+import { fetchAbout } from "@/sanity/utils/fetchAbout";
+import { BsFillBrightnessHighFill } from "react-icons/bs";
 
 async function SettingsPage() {
   const aboutData = await fetchAbout();
@@ -98,9 +99,12 @@ async function SettingsPage() {
           <div className="w-full pl-4 bg-mobile-bg dark:bg-mobile-bar-dark rounded-xl">
             <Link href="/settings/appearance">
               <div className="flex items-center justify-between py-2 pr-6 text-lg">
-                <p>
-                  <span className="mr-3 text-xl">🔠</span>Display & Brightness
-                </p>
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center w-6 h-6 mr-3 bg-blue-400 rounded">
+                    <BsFillBrightnessHighFill className="text-lg text-white" />
+                  </div>
+                  <span>Display & Brightness</span>
+                </div>
                 <p className="text-neutral-500">
                   <IoIosArrowForward />
                 </p>
