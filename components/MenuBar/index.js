@@ -47,7 +47,7 @@ const MenuBar = ({ title, minimal }) => {
         <Icon url="https://www.tiktok.com/@mrnmnzl">
           <FaTiktok />
         </Icon>
-        <div className="w-[110px]">
+        <div className="w-[120px] -mt-[2px]">
           <DynamicClock />
         </div>
       </div>
