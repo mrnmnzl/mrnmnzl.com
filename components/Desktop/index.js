@@ -22,24 +22,34 @@ const Desktop = ({ children }) => {
       </div>
       <div className="flex items-start justify-center w-full h-full sm:hidden">
         <div className="grid grid-cols-4 px-[15px] grid-rows-6 h-full py-16 w-full justify-items-center">
-          <MobileIcon title="CV" location="/cv">
-            <FaFolder className="w-full h-full" />
+          <MobileIcon title="CV" location="/cv" className="bg-white">
+            <FaFolder className="w-full h-full text-blue-400" />
           </MobileIcon>
-          <MobileIcon title="Github" location="https://github.com/mrnmnzl">
-            <FaGithub className="w-full h-full" />
+          <MobileIcon
+            title="Github"
+            location="https://github.com/mrnmnzl"
+            className="bg-slate-50"
+          >
+            <FaGithub className="w-full h-full text-neutral-900" />
           </MobileIcon>
           <MobileIcon
             title="Instagram"
             location="https://instagram.com/mrnmnzl"
+            className="bg-gradient-to-br from-[#fc45e7] to-[#FFDC80]"
           >
             <FaInstagram className="w-full h-full" />
           </MobileIcon>
-          <MobileIcon title="Tiktok" location="https://www.tiktok.com/@mrnmnzl">
+          <MobileIcon
+            title="Tiktok"
+            location="https://www.tiktok.com/@mrnmnzl"
+            className="bg-black"
+          >
             <FaTiktok className="w-full h-full" />
           </MobileIcon>
           <MobileIcon
             title="LinkedIn"
             location="https://www.linkedin.com/in/mrnmnzl/"
+            className="bg-blue-500"
           >
             <FaLinkedin className="w-full h-full" />
           </MobileIcon>
