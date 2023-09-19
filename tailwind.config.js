@@ -78,7 +78,7 @@ module.exports = {
         "mobile-bg": "rgba(255, 255, 255, 1)",
         "mobile-bg-dark": "rgba(0, 0, 0, 1)",
         "mobile-bar": "rgba(245, 245, 245, 1)",
-        "mobile-bar-dark": "rgba(22, 22, 22, 1)",
+        "mobile-bar-dark": "rgba(30, 30, 30, 1)",
       },
     },
   },
