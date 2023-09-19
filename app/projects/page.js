@@ -18,7 +18,7 @@ async function ProjectsPage() {
   return (
     <div className="flex flex-col h-full ">
       <TopBar title={data.title} icon={data.icon} />
-      <div className="flex flex-col items-center w-full overflow-y-scroll">
+      <div className="flex flex-col items-center w-full pb-16 overflow-y-scroll">
         <div className="max-w-[800px] w-full px-8 pb-12 mt-28">
           <Title title={data.title} />
           <PortableText value={data.introduction} components={components} />
