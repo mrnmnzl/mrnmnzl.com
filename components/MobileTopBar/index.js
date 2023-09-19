@@ -1,20 +1,20 @@
 import Link from "next/link";
-import { IoIosArrowBack } from "react-icons/io";
+import { IoChevronBackOutline } from "react-icons/io5";
 
-function MobileTopBar({ title }) {
+function MobileTopBar({ title, location = "/", buttonText = "Back" }) {
   return (
-    <div className="flex items-center justify-between w-full py-6">
+    <div className="flex items-center justify-between w-full py-6 flex-0">
       <Link
-        href="/"
-        className="inline-flex items-center w-1/3 px-4 py-2 text-xl text-blue-500"
+        href={location}
+        className="inline-flex items-center w-1/4 px-2 py-2 text-lg text-blue-500"
       >
-        <IoIosArrowBack className="mr-2" /> <span>Back</span>
+        <IoChevronBackOutline className="text-2xl" /> <span>{buttonText}</span>
       </Link>
       {title ? (
-        <p className="w-1/3 text-xl font-semibold text-center">{title}</p>
+        <p className="w-1/2 text-lg font-semibold text-center">{title}</p>
       ) : null}
 
-      <div className="w-1/3"></div>
+      <div className="w-1/4"></div>
     </div>
   );
 }
