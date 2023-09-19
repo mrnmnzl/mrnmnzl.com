@@ -8,7 +8,7 @@ const AppIcon = ({ location, text, children }) => {
   const isActive = path.includes(location);
 
   return (
-    <Link href={location} className="border-r-6">
+    <Link href={location}>
       <div className="app-icon group">
         <div className="flex-c-c shrink-0 w-full h-full sm:h-[85%] sm:w-[85%] sm:m-[5px_0] rounded-[10px] sm:rounded-lg bg-neutral-100 shadow-app-icon">
           <div className="flex-c-c h-[80%] w-[80%] m-0">{children}</div>
