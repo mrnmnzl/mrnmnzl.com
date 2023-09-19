@@ -32,7 +32,7 @@ function PDFRenderer() {
           pageNumber={i}
           renderAnnotationLayer={false}
           renderTextLayer={false}
-          className="[&>canvas]:!w-full [&>canvas]:!h-full mb-6 shadow-cv"
+          className="[&>canvas]:!w-full [&>canvas]:!h-full mb-2 m-[2px] sm:mb-6 shadow-cv"
         />
       );
     }
@@ -43,7 +43,7 @@ function PDFRenderer() {
     <Document
       file="/documents/cv.pdf"
       onLoadSuccess={onDocumentLoadSuccess}
-      className="sm:w-[800px] h-full"
+      className="h-full sm:w-full"
       loading={renderLoader()}
     >
       {renderPages()}
