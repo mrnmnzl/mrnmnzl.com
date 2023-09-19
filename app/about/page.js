@@ -1,14 +1,14 @@
 import { fetchAbout } from "@/sanity/utils/fetchAbout";
-import { AboutLayoutDesktop } from "@/components/AboutComponents/AboutLayoutDesktop";
-import { AboutLayoutMobile } from "@/components/AboutComponents/AboutLayoutMobile";
+import { AboutPageDesktop } from "@/components/AboutComponents/AboutPageDesktop";
+import { AboutPageMobile } from "@/components/AboutComponents/AboutPageMobile";
 
 async function AboutPage() {
   const aboutData = await fetchAbout();
 
   return (
     <>
-      <AboutLayoutDesktop aboutData={aboutData} />
-      <AboutLayoutMobile aboutData={aboutData} />
+      <AboutPageDesktop className="hidden sm:flex" data={aboutData} />
+      <AboutPageMobile className="flex sm:hidden" data={aboutData} />
     </>
   );
 }
