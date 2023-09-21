@@ -12,10 +12,15 @@ async function LockScreenDesktop({ className }) {
   return (
     <div
       className={cn(
-        "absolute flex-col w-full h-full top-0 z-[1001]  bg-[url('/images/background.jpeg')] bg-cover bg-[center_bottom]",
+        "absolute flex-col w-full h-full top-0 z-[1001]",
         className
       )}
     >
+      <div
+        className={cn(
+          "absolute w-full h-full top-0 bg-[url('/images/background.jpeg')] bg-cover bg-[center_bottom] "
+        )}
+      ></div>
       <MenuBar minimal />
       <div className="flex flex-col items-center justify-center flex-1 w-full text-white">
         <div className="relative h-[150px] w-[150px] rounded-full overflow-hidden">

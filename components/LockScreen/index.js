@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 
 const LockScreen = ({ children }) => {
@@ -10,7 +11,15 @@ const LockScreen = ({ children }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  return isLocked ? children : null;
+  return (
+    <div
+      className={cn("opacity-100 transition-opacity duration-200", {
+        "opacity-0": !isLocked,
+      })}
+    >
+      {children}
+    </div>
+  );
 };
 
 export { LockScreen };
