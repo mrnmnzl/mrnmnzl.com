@@ -47,7 +47,9 @@ const ProjectPage = async ({ params }) => {
                 </span>
               ) : null}
             </h1>
-            <p className="italic">{project.tagline}</p>
+            <p className="mb-4 text-lg italic text-neutral-500">
+              {project.tagline}
+            </p>
             <CustomPortableText data={project.description} />
             <div className="mt-4">
               <h2 className="mt-6 mb-2 text-xl font-bold">Technologies</h2>
