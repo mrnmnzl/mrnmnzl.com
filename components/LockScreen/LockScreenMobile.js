@@ -1,8 +1,9 @@
 import React from "react";
 import { IoIosFlashlight, IoIosCamera } from "react-icons/io";
 import { LockIcon } from "./LockIcon";
+import { cn } from "@/lib/utils";
 
-const LockScreenMobile = () => {
+const LockScreenMobile = ({ className }) => {
   function getTime() {
     let date = new Date();
     let hour = date.getHours();
@@ -49,8 +50,13 @@ const LockScreenMobile = () => {
   }
 
   return (
-    <div className="flex sm:hidden flex-col h-full w-full justify-between absolute top-0 z-[1001] bg-[url('/images/background.jpeg')] bg-cover bg-[center_bottom]">
-      <div className="flex flex-col items-center mt-3 text-white">
+    <div
+      className={cn(
+        "flex-col h-full w-full justify-between absolute top-0 z-[1001] bg-[url('/images/background.jpeg')] bg-cover bg-[center_bottom]",
+        className
+      )}
+    >
+      <div className="flex flex-col items-center mt-8 text-white">
         <LockIcon />
         <p className="text-xl">{getDate()}</p>
         <p className="font-light text-8xl">{getTime()}</p>

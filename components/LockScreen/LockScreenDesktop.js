@@ -4,22 +4,28 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { CgCloseO } from "react-icons/cg";
 import { MenuBar } from "../MenuBar";
 import { fetchAbout } from "@/sanity/utils/fetchAbout";
+import { cn } from "@/lib/utils";
 
-async function LockScreenDesktop() {
-  const aboutData = await fetchAbout();
+async function LockScreenDesktop({ className }) {
+  const data = await fetchAbout();
 
   return (
-    <div className="absolute flex-col w-full h-full top-0 z-[1001] hidden sm:flex bg-[url('/images/background.jpeg')] bg-cover bg-[center_bottom]">
+    <div
+      className={cn(
+        "absolute flex-col w-full h-full top-0 z-[1001]  bg-[url('/images/background.jpeg')] bg-cover bg-[center_bottom]",
+        className
+      )}
+    >
       <MenuBar minimal />
       <div className="flex flex-col items-center justify-center flex-1 w-full text-white">
         <div className="relative h-[150px] w-[150px] rounded-full overflow-hidden">
           <Image
-            src={aboutData.portrait.asset.url}
+            src={data.portrait.asset.url}
             alt="Portrait of Marion"
             placeholder="blur"
-            blurDataURL={aboutData.portrait.asset.metadata.lqip}
-            width={aboutData.portrait.asset.metadata.dimensions.width}
-            height={aboutData.portrait.asset.metadata.dimensions.height}
+            blurDataURL={data.portrait.asset.metadata.lqip}
+            width={data.portrait.asset.metadata.dimensions.width}
+            height={data.portrait.asset.metadata.dimensions.height}
           />
         </div>
         <h1 className="my-6 text-xl font-bold drop-shadow-md">mrnmnzl.com</h1>

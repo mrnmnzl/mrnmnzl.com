@@ -16,8 +16,8 @@ function RootLayout({ children }) {
           <Desktop>{children}</Desktop>
           <Dock />
           <LockScreen>
-            <LockScreenDesktop />
-            <LockScreenMobile />
+            <LockScreenDesktop className="hidden sm:flex" />
+            <LockScreenMobile className="flex sm:hidden" />
           </LockScreen>
         </Providers>
       </body>
