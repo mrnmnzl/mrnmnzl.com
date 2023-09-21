@@ -5,11 +5,19 @@ import { clsx } from "clsx";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const ProjectsLinksList = ({ projects, title, icon }) => {
+function ProjectsLinksList({ projects, title, icon }) {
   const pathname = usePathname();
   const activePath = pathname.substring(pathname.lastIndexOf("/") + 1);
 
+  const sortProjectsByDate = (projects) => {
+    return projects.sort((a, b) => {
+      return new Date(b.date) - new Date(a.date);
+    });
+  };
+
   const renderProjectLinks = (projects) => {
+    projects = sortProjectsByDate(projects);
+
     return projects.map((project, i) => {
       const active = project.slug.current === activePath;
       const activeLinkClasses = clsx(
@@ -35,7 +43,7 @@ const ProjectsLinksList = ({ projects, title, icon }) => {
   const renderHomepageLink = () => {
     const active = activePath === "projects";
     const activeLinkClasses = clsx(
-      "sm:rounded-sm px-4 sm:mx-[2px] py-[5px] sm:mb-4 overflow-ellipsis whitespace-nowrap overflow-hidden",
+      "sm:rounded-sm sm:px-4 sm:mx-[2px] py-[5px] sm:mb-4 overflow-ellipsis whitespace-nowrap overflow-hidden h-12 sm:h-auto w-12 sm:w-auto flex-c-c sm:block",
       active
         ? "bg-projects-link dark:bg-projects-link-dark font-semibold "
         : null
@@ -46,7 +54,7 @@ const ProjectsLinksList = ({ projects, title, icon }) => {
           href={"/projects/"}
           className=" text-projects-text dark:text-projects-text-dark"
         >
-          <span className="sm:mr-2">{icon}</span>
+          <span className="text-3xl sm:text-base sm:mr-2">{icon}</span>
           <span className="hidden sm:inline">{title}</span>
         </Link>
       </div>
@@ -54,7 +62,7 @@ const ProjectsLinksList = ({ projects, title, icon }) => {
   };
 
   return (
-    <nav className="pt-6 sm:p-0">
+    <nav className="sm:p-0">
       {renderHomepageLink()}
       <h2 className="hidden px-4 text-sm font-bold text-projects-title dark:text-projects-title-dark sm:block">
         Projects
@@ -62,6 +70,6 @@ const ProjectsLinksList = ({ projects, title, icon }) => {
       {renderProjectLinks(projects)}
     </nav>
   );
-};
+}
 
 export { ProjectsLinksList };

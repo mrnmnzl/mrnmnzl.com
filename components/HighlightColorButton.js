@@ -1,13 +1,12 @@
-// The three dots that appear in the top right corner of the screen
 import React from "react";
 import { clsx } from "clsx";
 
-const SettingsHighlightButton = ({
+function HighlightColorButton({
   active = false,
   title,
   color,
   handleColorClick,
-}) => {
+}) {
   const classes = clsx(
     "flex items-center justify-center w-6 h-6 rounded-xl",
     color
@@ -30,6 +29,6 @@ const SettingsHighlightButton = ({
       <p className="mt-2 text-sm">{active ? title : ""}</p>
     </button>
   );
-};
+}
 
-export { SettingsHighlightButton };
+export { HighlightColorButton };

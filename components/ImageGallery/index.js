@@ -2,8 +2,8 @@
 import PhotoAlbum from "react-photo-album";
 import { NextJsImage } from "./NextJsImage";
 
-function Gallery({ photos }) {
+function ImageGallery({ photos }) {
   return <PhotoAlbum layout="rows" photos={photos} renderPhoto={NextJsImage} />;
 }
 
-export { Gallery };
+export { ImageGallery };

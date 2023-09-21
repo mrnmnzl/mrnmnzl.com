@@ -1,11 +1,12 @@
 "use client";
+
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 import { useStyleStore } from "@/stores/styleStore";
 
-const SettingsNavItem = ({ location, title, children }) => {
+function SettingsNavigationItem({ location, title, children }) {
   const path = usePathname();
   const isActive = path === location;
   const selectedColor = useStyleStore((state) => state.selectedColor);
@@ -23,6 +24,6 @@ const SettingsNavItem = ({ location, title, children }) => {
       {title}
     </Link>
   );
-};
+}
 
-export { SettingsNavItem };
+export { SettingsNavigationItem };

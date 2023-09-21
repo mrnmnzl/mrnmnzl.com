@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { Dots } from "@/components/Dots";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { Dots } from "@/components/Dots";
 
-function AboutPageDesktop({ data, className }) {
+function AboutDesktopPage({ data, className }) {
   return (
     <main
       className={cn(
@@ -43,12 +44,15 @@ function AboutPageDesktop({ data, className }) {
             </tr>
           </tbody>
         </table>
-        <button className="text-sm py-[1px] px-[10px] bg-button-light dark:bg-button-dark rounded">
+        <Link
+          href="projects/mrnmnzl-com-v2"
+          className="text-sm py-[1px] px-[10px] bg-button-light dark:bg-button-dark rounded"
+        >
           More Info...
-        </button>
+        </Link>
       </div>
     </main>
   );
 }
 
-export { AboutPageDesktop };
+export { AboutDesktopPage };

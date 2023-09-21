@@ -1,5 +1,5 @@
-import { MailLayoutMobile } from "@/components/MailComponents/MailLayoutMobile";
-import { MailLayoutDesktop } from "@/components/MailComponents/MailLayoutDesktop";
+import { MailMobileLayout } from "@/components/MailMobileLayout";
+import { MailDesktopLayout } from "@/components/MailDesktopLayout";
 
 function MailLayout({ children }) {
   const emails = [
@@ -31,10 +31,10 @@ function MailLayout({ children }) {
 
   return (
     <>
-      <MailLayoutDesktop data={emails} className="hidden sm:flex">
+      <MailDesktopLayout data={emails} className="hidden sm:flex">
         {children}
-      </MailLayoutDesktop>
-      <MailLayoutMobile data={emails} className="flex sm:hidden" />
+      </MailDesktopLayout>
+      <MailMobileLayout data={emails} className="flex sm:hidden" />
     </>
   );
 }

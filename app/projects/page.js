@@ -1,37 +1,30 @@
-import { fetchCodingExp } from "@/sanity/utils/fetchCodingExp";
-import { PortableText } from "@portabletext/react";
-import { TopBar } from "@/components/ProjectComponents/TopBar";
-import { Title } from "@/components/ProjectComponents/Title";
-import { Subtitle } from "@/components/ProjectComponents/Subtitle";
-import { List } from "@/components/ProjectComponents/List";
+import { fetchExperience } from "@/sanity/utils/fetchExperience";
+import { fetchProjects } from "@/sanity/utils/fetchProjects";
+import { ProjectsTopBar } from "@/components/ProjectsTopBar";
+import { CustomPortableText } from "@/components/CustomPortableText";
+import { ProjectsLinksList } from "@/components/ProjectsLinksList";
 
 async function ProjectsPage() {
-  const data = await fetchCodingExp();
-
-  const components = {
-    block: {
-      h2: ({ children }) => <Subtitle>{children}</Subtitle>,
-      normal: ({ children }) => <p className="mb-4">{children}</p>,
-    },
-  };
+  const data = await fetchExperience();
+  const projects = await fetchProjects();
 
   return (
-    <div className="flex flex-col h-full ">
-      <TopBar title={data.title} icon={data.icon} />
-      <div className="flex flex-col items-center w-full pb-16 overflow-y-scroll">
-        <div className="max-w-[800px] w-full px-8 pb-12 mt-28">
-          <Title title={data.title} />
-          <PortableText value={data.introduction} components={components} />
-          <Subtitle>{data.expConfident.title}</Subtitle>
-          <List technologies={data.expConfident.technologies} />
-          <Subtitle>{data.expFigureOut.title}</Subtitle>
-          <List technologies={data.expFigureOut.technologies} />
-          <Subtitle>{data.expTeach.title}</Subtitle>
-          <List technologies={data.expTeach.technologies} />
-          <Subtitle>{data.expUniversity.title}</Subtitle>
-          <List technologies={data.expUniversity.technologies} />
-          <Subtitle>{data.expLearn.title}</Subtitle>
-          <List technologies={data.expLearn.technologies} />
+    <div className="flex sm:block">
+      <div className="sm:hidden border-r-[1px] backdrop-blur border-window-border-light bg-projects-sidebar dark:bg-projects-sidebar-dark">
+        <ProjectsLinksList
+          projects={projects}
+          title={data.title}
+          icon={data.icon}
+        />
+      </div>
+      <div className="flex flex-col h-full">
+        <ProjectsTopBar title={data.title} icon={data.icon} />
+        <div className="flex flex-col items-center flex-1 w-full pb-16">
+          <div className="max-w-[800px] w-full h-full overflow-scroll px-8 pb-12 mt-28">
+            <h1 className="mb-4 text-4xl font-bold">{data.title}</h1>
+            <CustomPortableText data={data.introduction} />
+            <CustomPortableText data={data.experience} />
+          </div>
         </div>
       </div>
     </div>

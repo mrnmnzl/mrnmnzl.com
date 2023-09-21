@@ -1,10 +1,10 @@
 import { MailListItem } from "./MailListItem";
 import { IoSearchOutline } from "react-icons/io5";
-import { MobileTopAction } from "../MobileTopAction";
-import { MobileCloseButton } from "../MobileCloseButton";
+import { MobileTopAction } from "./MobileTopAction";
+import { MobileCloseButton } from "./MobileCloseButton";
 import { cn } from "@/lib/utils";
 
-function MailLayoutMobile({ data, className }) {
+function MailMobileLayout({ data, className }) {
   return (
     <main
       className={cn(
@@ -37,4 +37,4 @@ function MailLayoutMobile({ data, className }) {
   );
 }
 
-export { MailLayoutMobile };
+export { MailMobileLayout };
