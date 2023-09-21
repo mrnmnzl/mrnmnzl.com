@@ -7,13 +7,12 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { BiCode } from "react-icons/bi";
-import { PiFilesLight } from "react-icons/pi";
 import { BiInfoCircle } from "react-icons/bi";
 import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schemaTypes } from "./sanity/schemas/index";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
-const singletonTypes = new Set(["codingExp, cv, about"]);
+const singletonTypes = new Set(["experience, about"]);
 
 const singletonListItem = (S, typeName, title) =>
   S.listItem()
@@ -46,8 +45,7 @@ export default defineConfig({
           .title("Content")
           .items([
             // Singletons
-            singletonListItem(S, "codingExp", "Coding Experience").icon(BiCode),
-            singletonListItem(S, "cv", "CV").icon(PiFilesLight),
+            singletonListItem(S, "experience", "Experience").icon(BiCode),
             singletonListItem(S, "about", "About").icon(BiInfoCircle),
             // Regular documents
             S.documentTypeListItem("project").title("Coding Projects"),

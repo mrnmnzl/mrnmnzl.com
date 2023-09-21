@@ -2,11 +2,12 @@
 import { groq } from "next-sanity";
 import { client } from "../lib/client";
 
-export const fetchCVTitle = async () => {
+export const fetchExperienceTitle = async () => {
   const query = groq`
-    *[_type=="cv"][0]{
+    *[_type=="experience"][0]{
     _id,
-    title
+    title,
+    icon
     }
 `;
 
@@ -14,15 +15,17 @@ export const fetchCVTitle = async () => {
   return title;
 };
 
-export const fetchCV = async () => {
+export const fetchExperience = async () => {
   const query = groq`
-    *[_type=="cv"][0]{
+    *[_type=="experience"][0]{
     _id,
     title,
-    "pdfURL": pdf.asset->url
+    icon,
+    introduction,
+    experience
     }
 `;
 
-  const cvData = await client.fetch(query);
-  return cvData;
+  const experience = await client.fetch(query);
+  return experience;
 };

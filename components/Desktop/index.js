@@ -7,7 +7,7 @@ import {
   FaInstagram,
   FaGithub,
   FaFolder,
-  FaLinkedin,
+  FaLinkedinIn,
 } from "react-icons/fa";
 
 const Desktop = ({ children }) => {
@@ -35,23 +35,23 @@ const Desktop = ({ children }) => {
           <MobileIcon
             title="Instagram"
             location="https://instagram.com/mrnmnzl"
-            className="bg-gradient-to-br from-[#fc45e7] to-[#FFDC80]"
+            className="bg-gradient-to-br from-[#fc45e7] to-[#e6b635]"
           >
-            <FaInstagram className="w-full h-full" />
+            <FaInstagram className="w-full h-full text-white" />
           </MobileIcon>
           <MobileIcon
             title="Tiktok"
-            location="https://www.tiktok.com/@mrnmnzl"
+            location="https://www.tiktok.com/@unaestheticbooktalks"
             className="bg-black"
           >
-            <FaTiktok className="w-full h-full" />
+            <FaTiktok className="w-full h-full text-white" />
           </MobileIcon>
           <MobileIcon
             title="LinkedIn"
             location="https://www.linkedin.com/in/mrnmnzl/"
             className="bg-blue-500"
           >
-            <FaLinkedin className="w-full h-full" />
+            <FaLinkedinIn className="w-full h-full text-white" />
           </MobileIcon>
         </div>
       </div>

@@ -7,7 +7,8 @@ export const query = groq`
     _id,
       name,
       slug,
-      icon
+      icon,
+      date
   }
 `;
 

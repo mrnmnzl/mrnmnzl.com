@@ -1,6 +1,5 @@
 import project from "./documents/project";
-import codingExp from "./singletons/codingExp";
-import cv from "./singletons/cv";
+import experience from "./singletons/experience";
 import about from "./singletons/about";
 
-export const schemaTypes = [project, codingExp, cv, about];
+export const schemaTypes = [project, experience, about];
