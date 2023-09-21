@@ -7,6 +7,11 @@ import { LockScreenDesktop } from "@/components/LockScreen/LockScreenDesktop";
 import { LockScreenMobile } from "@/components/LockScreen/LockScreenMobile";
 import "./globals.css";
 
+export const metadata = {
+  title: "mrnmnzl Portfolio",
+  description: "A personal portfolio by Marion Menzl",
+};
+
 function RootLayout({ children }) {
   return (
     <html lang="en">
