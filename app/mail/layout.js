@@ -27,18 +27,14 @@ function MailLayout({ children }) {
       subject: "Pillow Fight RSVP!",
       text: `Dear Slumber Party Enthusiast,\n\nBreak out your comfiest PJs and fluffiest pillows - it's time for an epic pillow fight showdown! Don't forget your favorite teddy bear for moral support.\n\nConfirm your presence by responding with your most embarrassing childhood bedtime story. Let the giggles and games commence!\n\nWarm and fuzzy regards,\nSnuggle Squad`,
     },
-    {
-      address: "spacepets@email.com",
-      date: "31.10.2022",
-      subject: "Alien Pets Unite!",
-      text: `Greetings Cosmic Critter Lover,\n\nThis Halloween, it's not just humans who get to have all the fun! Dress up your interstellar pet in their finest extraterrestrial garb for a chance to win cosmic prizes.\n\nSend us a photo of your pet in costume to secure your spot in the competition. May the best-dressed alien pet prevail!\n\nCosmically yours,\nCaptain Nebula`,
-    },
   ];
 
   return (
     <>
-      <MailLayoutDesktop mailData={emails}>{children}</MailLayoutDesktop>
-      <MailLayoutMobile mailData={emails} />
+      <MailLayoutDesktop data={emails} className="hidden sm:flex">
+        {children}
+      </MailLayoutDesktop>
+      <MailLayoutMobile data={emails} className="flex sm:hidden" />
     </>
   );
 }
