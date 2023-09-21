@@ -1,11 +1,8 @@
 import { LuExternalLink, LuDownload } from "react-icons/lu";
 import { Dots } from "@/components/Dots";
-import { fetchCV } from "@/sanity/utils/fetchCV";
 import { PDFRenderer } from "@/components/PDFRenderer";
 
 async function CVPage() {
-  const cvData = await fetchCV();
-
   return (
     <div className="flex flex-col h-full">
       <div className="relative z-50 flex items-center justify-between w-full h-auto flex-0 bg-cv-bar dark:bg-cv-bar-dark">
