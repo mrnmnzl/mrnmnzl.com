@@ -9,8 +9,8 @@ async function SettingsPage() {
   const aboutData = await fetchAbout();
   return (
     <>
-      <div className="hidden py-3 sm:block">
-        <h1 className="mb-4 ml-3 font-semibold text-text-light">
+      <div className="hidden sm:block">
+        <h1 className="mt-4 mb-4 ml-2 font-semibold text-text-light dark:text-text-dark">
           Marion Menzl
         </h1>
         <div className="flex flex-col items-center justify-center flex-1">
@@ -26,9 +26,11 @@ async function SettingsPage() {
             />
           </div>
           <h1 className="-mb-1 text-xl font-bold">Marion Menzl</h1>
-          <p className="mb-5 text-text-light">marion.menzl@me.com</p>
+          <p className="mb-5 text-text-light dark:text-text-dark">
+            marion.menzl@me.com
+          </p>
           <div className="w-full">
-            <div className="border rounded bg-neutral-200 border-window-border-light">
+            <div className="rounded-xl bg-neutral-200 dark:bg-neutral-700 border-window-border-light">
               <div className="py-2 mx-2 border-b border-window-border-light">
                 <p className="text-sm">
                   <span className="mr-2 text-lg">👩‍💻</span>Frontend dev
