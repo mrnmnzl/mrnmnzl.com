@@ -29,7 +29,7 @@ function MailDesktopLayout({ children, data, className }) {
             <Dots location={"/"} red activeDots={3} />
             <div>
               <p className="ml-4 text-sm font-bold">Inbox - mrnmnzl.com</p>
-              <p className="ml-4 text-xs text-neutral-400">5 messages</p>
+              <p className="ml-4 text-xs text-neutral-400">4 messages</p>
             </div>
           </div>
           <Link className={buttonClasses} href="mailto:marion.menzl@me.com">
