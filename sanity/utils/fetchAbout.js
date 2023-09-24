@@ -27,6 +27,12 @@ export const fetchAbout = async () => {
   }
 `;
 
-  const aboutData = await client.fetch(query);
+  const aboutData = await client.fetch(
+    query,
+    {},
+    {
+      next: { tags: ["sanity"] },
+    }
+  );
   return aboutData;
 };

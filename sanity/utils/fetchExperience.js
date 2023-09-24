@@ -11,7 +11,13 @@ export const fetchExperienceTitle = async () => {
     }
 `;
 
-  const title = await client.fetch(query);
+  const title = await client.fetch(
+    query,
+    {},
+    {
+      next: { tags: ["sanity"] },
+    }
+  );
   return title;
 };
 
@@ -26,6 +32,12 @@ export const fetchExperience = async () => {
     }
 `;
 
-  const experience = await client.fetch(query);
+  const experience = await client.fetch(
+    query,
+    {},
+    {
+      next: { tags: ["sanity"] },
+    }
+  );
   return experience;
 };
