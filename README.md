@@ -19,7 +19,7 @@ The desktop version is heavily inspired by the current macOS system, while the m
 
 ## Local Development
 
-To develop Dub locally, you will need to clone this repository and change the env.js variables in the sanity folder to your own credentials.
+To develop locally, you will need to clone this repository and change the env.js variables in the sanity folder to your own credentials.
 Once that's done, you can use the following commands to run the app locally:
 
 ```
