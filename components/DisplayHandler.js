@@ -1,13 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MenuBar } from "@/components/MenuBar";
-import { Desktop } from "@/components/Desktop";
-import { Dock } from "@/components/Dock";
-import { LockScreenDesktop } from "@/components/LockScreen/LockScreenDesktop";
-import { LockScreenMobile } from "@/components/LockScreen/LockScreenMobile";
+import { cn } from "@/lib/utils";
 
-function DisplayHandler({ children }) {
+function DisplayHandler({ loadingScreen, appScreen, className }) {
   const [isLocked, setIsLocked] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -15,16 +11,22 @@ function DisplayHandler({ children }) {
     }, 1500);
     return () => clearTimeout(timer);
   }, []);
-  return isLocked ? (
+  return (
     <>
-      <LockScreenDesktop className="hidden sm:flex" />
-      <LockScreenMobile className="flex sm:hidden" />
-    </>
-  ) : (
-    <>
-      <MenuBar title="mrnmnzl" />
-      <Desktop>{children}</Desktop>
-      <Dock />
+      <div
+        className={cn(className, {
+          hidden: !isLocked,
+        })}
+      >
+        {loadingScreen}
+      </div>
+      <div
+        className={cn(className, {
+          hidden: isLocked,
+        })}
+      >
+        {appScreen}
+      </div>
     </>
   );
 }
