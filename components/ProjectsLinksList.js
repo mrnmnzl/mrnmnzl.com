@@ -21,7 +21,7 @@ function ProjectsLinksList({ projects, title, icon }) {
     return projects.map((project, i) => {
       const active = project.slug.current === activePath;
       const activeLinkClasses = clsx(
-        "sm:rounded-sm sm:mx-[2px] px-4 py-[5px] sm:py-[2px] overflow-ellipsis whitespace-nowrap overflow-hidden block",
+        "sm:rounded-sm sm:mx-[2px] px-4 py-[5px] sm:py-[2px]  block",
         active
           ? "bg-projects-link dark:bg-projects-link-dark font-semibold "
           : null
@@ -32,7 +32,7 @@ function ProjectsLinksList({ projects, title, icon }) {
           className={activeLinkClasses}
           href={"/projects/" + project.slug.current}
         >
-          <div className="text-projects-text dark:text-projects-text-dark">
+          <div className="overflow-hidden text-projects-text dark:text-projects-text-dark overflow-ellipsis whitespace-nowrap">
             <span className="sm:mr-2">{project.icon}</span>
             <span className="hidden sm:inline">{project.name}</span>
           </div>
@@ -44,14 +44,14 @@ function ProjectsLinksList({ projects, title, icon }) {
   const renderHomepageLink = () => {
     const active = activePath === "projects";
     const activeLinkClasses = clsx(
-      "sm:rounded-sm sm:px-4 sm:mx-[2px] py-[5px] sm:mb-4 overflow-ellipsis whitespace-nowrap overflow-hidden h-12 sm:h-auto w-12 sm:w-auto flex-c-c sm:block",
+      "sm:rounded-sm sm:px-4 sm:mx-[2px] py-[5px] sm:mb-4  h-12 sm:h-auto w-12 sm:w-auto flex-c-c sm:block",
       active
-        ? "bg-projects-link dark:bg-projects-link-dark font-semibold "
+        ? "bg-projects-link dark:bg-projects-link-dark font-semibold"
         : null
     );
     return (
       <Link className={activeLinkClasses} href={"/projects/"}>
-        <div className=" text-projects-text dark:text-projects-text-dark">
+        <div className="overflow-hidden  text-projects-text dark:text-projects-text-dark overflow-ellipsis whitespace-nowrap">
           <span className="text-3xl sm:text-base sm:mr-2">{icon}</span>
           <span className="hidden sm:inline">{title}</span>
         </div>
