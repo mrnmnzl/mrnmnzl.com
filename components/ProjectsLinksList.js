@@ -21,21 +21,22 @@ function ProjectsLinksList({ projects, title, icon }) {
     return projects.map((project, i) => {
       const active = project.slug.current === activePath;
       const activeLinkClasses = clsx(
-        "sm:rounded-sm sm:mx-[2px] px-4 py-[5px] sm:py-[2px] overflow-ellipsis whitespace-nowrap overflow-hidden",
+        "sm:rounded-sm sm:mx-[2px] px-4 py-[5px] sm:py-[2px] overflow-ellipsis whitespace-nowrap overflow-hidden block",
         active
           ? "bg-projects-link dark:bg-projects-link-dark font-semibold "
           : null
       );
       return (
-        <div key={i} className={activeLinkClasses}>
-          <Link
-            href={"/projects/" + project.slug.current}
-            className=" text-projects-text dark:text-projects-text-dark"
-          >
+        <Link
+          key={i}
+          className={activeLinkClasses}
+          href={"/projects/" + project.slug.current}
+        >
+          <div className="text-projects-text dark:text-projects-text-dark">
             <span className="sm:mr-2">{project.icon}</span>
             <span className="hidden sm:inline">{project.name}</span>
-          </Link>
-        </div>
+          </div>
+        </Link>
       );
     });
   };
@@ -49,15 +50,12 @@ function ProjectsLinksList({ projects, title, icon }) {
         : null
     );
     return (
-      <div className={activeLinkClasses}>
-        <Link
-          href={"/projects/"}
-          className=" text-projects-text dark:text-projects-text-dark"
-        >
+      <Link className={activeLinkClasses} href={"/projects/"}>
+        <div className=" text-projects-text dark:text-projects-text-dark">
           <span className="text-3xl sm:text-base sm:mr-2">{icon}</span>
           <span className="hidden sm:inline">{title}</span>
-        </Link>
-      </div>
+        </div>
+      </Link>
     );
   };
 
