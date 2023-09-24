@@ -1,10 +1,5 @@
-import { MenuBar } from "@/components/MenuBar";
-import { Desktop } from "@/components/Desktop";
-import { Dock } from "@/components/Dock";
+import DisplayHandler from "@/components/DisplayHandler";
 import { Providers } from "@/providers";
-import { LockScreen } from "@/components/LockScreen";
-import { LockScreenDesktop } from "@/components/LockScreen/LockScreenDesktop";
-import { LockScreenMobile } from "@/components/LockScreen/LockScreenMobile";
 import "./globals.css";
 
 export const metadata = {
@@ -24,7 +19,6 @@ export const metadata = {
     description: "A personal portfolio by Marion Menzl",
     creator: "@mrnmnzl",
   },
-  themeColor: "#3593a9",
 };
 
 function RootLayout({ children }) {
@@ -32,13 +26,7 @@ function RootLayout({ children }) {
     <html lang="en">
       <body className="absolute top-0 flex flex-col w-full h-full">
         <Providers>
-          <LockScreen>
-            <LockScreenDesktop className="hidden sm:flex" />
-            <LockScreenMobile className="flex sm:hidden" />
-          </LockScreen>
-          <MenuBar title="mrnmnzl" />
-          <Desktop>{children}</Desktop>
-          <Dock />
+          <DisplayHandler>{children}</DisplayHandler>
         </Providers>
       </body>
     </html>
