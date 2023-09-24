@@ -40,7 +40,7 @@ function AboutMobilePage({ data, className }) {
           </div>
         </div>
         <div className="w-full pl-6 bg-mobile-bg dark:bg-mobile-bar-dark rounded-xl">
-          <Link href="/projects/mrnmnzl-com-v2">
+          <Link href="/projects/mrnmnzl-com">
             <div className="flex items-center justify-between py-2 pr-6 text-lg">
               <p className="">More Information</p>
               <p className="text-neutral-500">
