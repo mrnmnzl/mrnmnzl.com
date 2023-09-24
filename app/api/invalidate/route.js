@@ -1,7 +1,7 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 
 export function GET() {
-  // revalidatePath("/projects/[slug]", "page");
+  revalidatePath("/projects", "layout");
   revalidateTag("sanity");
   return new Response("OK");
 }
