@@ -13,13 +13,7 @@ export const query = groq`
 `;
 
 export const fetchProjects = async () => {
-  const projects = await client.fetch(
-    query,
-    {},
-    {
-      next: { tags: ["sanity"] },
-    }
-  );
+  const projects = await client.fetch(query);
   return projects;
 };
 
@@ -66,12 +60,6 @@ export const fetchProject = async (querySlug) => {
   }
 `;
 
-  const project = await client.fetch(
-    query,
-    {},
-    {
-      next: { tags: ["sanity"] },
-    }
-  );
+  const project = await client.fetch(query);
   return project;
 };
