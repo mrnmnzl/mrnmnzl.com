@@ -11,9 +11,6 @@
   <a href="https://twitter.com/mrnmnzl">
     <img src="https://img.shields.io/twitter/follow/mrnmnzl?style=flat&label=%40mrnmnzl&logo=twitter&color=0bf&logoColor=fff" alt="Twitter" />
   </a>
-  <a href="https://github.com/steven-tey/dub/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/steven-tey/dub?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
-  </a>
 </p>
 
 ## Introduction
