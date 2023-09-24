@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const LockScreenMobile = ({ className }) => {
   function getTime() {
-    let date = new Date();
+    const date = new Date();
     let hour = date.getHours();
     let minute = date.getMinutes();
 
@@ -41,10 +41,11 @@ const LockScreenMobile = ({ className }) => {
       "November",
       "December",
     ];
-    let date = new Date();
-    let day = date.getDay();
-    let weekday = weekdays[day];
-    let month = months[date.getMonth()];
+    const date = new Date();
+    const day = date.getDate();
+    const dayNum = date.getDay();
+    const weekday = weekdays[dayNum];
+    const month = months[date.getMonth()];
 
     return weekday + ", " + day + ". " + month;
   }
