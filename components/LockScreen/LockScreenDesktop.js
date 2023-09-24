@@ -18,7 +18,7 @@ async function LockScreenDesktop({ className }) {
     >
       <div
         className={cn(
-          "absolute w-full h-full top-0 bg-[url('/images/background.jpeg')] bg-cover bg-[center_bottom] "
+          "absolute w-full h-full top-0 bg-[url('/images/background.jpeg')] bg-cover bg-[center_center] "
         )}
       ></div>
       <MenuBar minimal />
@@ -33,15 +33,17 @@ async function LockScreenDesktop({ className }) {
             height={data.portrait.asset.metadata.dimensions.height}
           />
         </div>
-        <h1 className="my-6 text-xl font-bold drop-shadow-md">mrnmnzl.com</h1>
+        <h1 className="my-6 text-xl font-bold drop-shadow-[0px_0px_2px_#111]">
+          mrnmnzl.com
+        </h1>
         <AiOutlineLoading3Quarters className="w-5 h-5 animate-spin" />
-        <p className="my-6 text-xs font-bold drop-shadow-md">
+        <p className="my-6 text-xs font-bold drop-shadow-[0px_0px_2px_#111]">
           Touch ID or enter password
         </p>
       </div>
       <div className="absolute flex flex-col items-center w-full bottom-10">
         <div className="flex items-center justify-center h-9 w-9 bg-[rgba(255,255,255,0.3)] rounded-full">
-          <CgCloseO className="h-[70%] w-[70%]" />
+          <CgCloseO className="h-[70%] w-[70%] text-white" />
         </div>
         <p className="mt-2 text-xs font-bold">Cancel</p>
       </div>

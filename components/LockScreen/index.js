@@ -13,8 +13,8 @@ const LockScreen = ({ children }) => {
 
   return (
     <div
-      className={cn("opacity-100 transition-opacity duration-200", {
-        "opacity-0": !isLocked,
+      className={cn({
+        hidden: !isLocked,
       })}
     >
       {children}
