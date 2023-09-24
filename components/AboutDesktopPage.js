@@ -45,7 +45,7 @@ function AboutDesktopPage({ data, className }) {
           </tbody>
         </table>
         <Link
-          href="projects/mrnmnzl-com-v2"
+          href="projects/mrnmnzl-com"
           className="text-sm py-[1px] px-[10px] bg-button-light dark:bg-button-dark rounded"
         >
           More Info...
