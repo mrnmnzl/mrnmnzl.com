@@ -25,8 +25,20 @@ export const fetchProject = async (querySlug) => {
     tagline,
     slug,
     icon,
-    "coverImageUrl": coverImage.asset->url,
-    "coverImageAlt": coverImage.alt,
+    projectUrl,
+    coverImage {
+      asset-> {
+        url,
+        metadata {
+          dimensions {
+            width,
+            height
+          },
+          lqip
+        }
+      },
+      alt
+    },
     description,
     date,
     technologies,

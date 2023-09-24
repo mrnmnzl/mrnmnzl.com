@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { fetchProject } from "@/sanity/utils/fetchProjects";
 import { CustomPortableText } from "@/components/CustomPortableText";
 import { ProjectsTopBar } from "@/components/ProjectsTopBar";
@@ -30,11 +31,13 @@ const ProjectPage = async ({ params }) => {
       <ProjectsTopBar title={project.name} icon={project.icon} showBack />
       <div className="flex-1 pb-16 overflow-y-scroll">
         <Image
-          src={project.coverImageUrl}
-          alt={project.coverImageAlt}
-          width={800}
-          height={300}
-          className="w-full min-h-[200px]  sm:min-h-[300px] object-cover"
+          src={project.coverImage.asset.url}
+          alt={project.coverImage.alt}
+          width={project.coverImage.asset.metadata.dimensions.width}
+          height={project.coverImage.asset.metadata.dimensions.height}
+          blurDataURL={project.coverImage.asset.metadata.lqip}
+          placeholder="blur"
+          className="w-full min-h-[200px] sm:min-h-[300px] sm:max-h-[400px] object-cover"
         />
         <div className="flex justify-center flex-1 w-full">
           <div className="max-w-[800px] mx-8 pb-12">
@@ -66,6 +69,16 @@ const ProjectPage = async ({ params }) => {
               <div className="mt-4">
                 <h2 className="mt-6 mb-2 text-xl font-bold">Impressions</h2>
                 <ImageGallery photos={getImages(project.images)} />
+              </div>
+            ) : null}
+            {project.projectUrl ? (
+              <div className="mt-4">
+                <Link
+                  href={project.projectUrl}
+                  className="mt-6 mb-2 text-xl font-bold"
+                >
+                  Link
+                </Link>
               </div>
             ) : null}
           </div>
