@@ -1,9 +1,9 @@
-import { fetchAbout } from "@/sanity/utils/fetchAbout";
+import { fetchGeneral } from "@/sanity/utils/fetchGeneral";
 import { SettingsDesktopPage } from "@/components/SettingsDesktopPage";
 import { SettingsMobilePage } from "@/components/SettingsMobilePage";
 
 async function SettingsPage() {
-  const data = await fetchAbout();
+  const data = await fetchGeneral();
 
   return (
     <>

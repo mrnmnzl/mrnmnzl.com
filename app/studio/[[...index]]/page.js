@@ -14,7 +14,7 @@ import config from "../../../sanity.config";
 
 function StudioPage() {
   return (
-    <main className="absolute top-0 sm:-top-[40px] left-0 flex w-full flex-col flex-1 z-[2000]">
+    <main className="absolute top-0 left-0 flex flex-col flex-1 w-full h-full">
       <NextStudio config={config} />
     </main>
   );

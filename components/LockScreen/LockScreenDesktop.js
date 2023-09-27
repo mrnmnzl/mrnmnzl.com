@@ -3,11 +3,11 @@ import Image from "next/image";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { CgCloseO } from "react-icons/cg";
 import { MenuBar } from "../MenuBar";
-import { fetchAbout } from "@/sanity/utils/fetchAbout";
+import { fetchGeneral } from "@/sanity/utils/fetchGeneral";
 import { cn } from "@/lib/utils";
 
 async function LockScreenDesktop({ className }) {
-  const data = await fetchAbout();
+  const data = await fetchGeneral();
 
   return (
     <div

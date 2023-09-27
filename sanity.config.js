@@ -12,7 +12,7 @@ import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schemaTypes } from "./sanity/schemas/index";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
-const singletonTypes = new Set(["experience, about"]);
+const singletonTypes = new Set(["general, experience"]);
 
 const singletonListItem = (S, typeName, title) =>
   S.listItem()
@@ -45,10 +45,10 @@ export default defineConfig({
           .title("Content")
           .items([
             // Singletons
+            singletonListItem(S, "about", "General").icon(BiInfoCircle),
             singletonListItem(S, "experience", "Experience").icon(BiCode),
-            singletonListItem(S, "about", "About").icon(BiInfoCircle),
             // Regular documents
-            S.documentTypeListItem("project").title("Coding Projects"),
+            S.documentTypeListItem("project").title("Projects"),
           ]),
     }),
     visionTool({ defaultApiVersion: apiVersion }),

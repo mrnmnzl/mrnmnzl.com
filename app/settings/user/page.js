@@ -1,9 +1,9 @@
-import { fetchAbout } from "@/sanity/utils/fetchAbout";
+import { fetchGeneral } from "@/sanity/utils/fetchGeneral";
 import { MobileTopBar } from "@/components/MobileTopBar";
 import Image from "next/image";
 
 async function SettingsAppearancePage() {
-  const data = await fetchAbout();
+  const data = await fetchGeneral();
 
   return (
     <div className="flex flex-col h-full sm:hidden bg-mobile-bar dark:bg-mobile-bg-dark">

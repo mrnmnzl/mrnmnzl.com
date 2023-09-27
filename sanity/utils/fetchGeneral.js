@@ -2,7 +2,7 @@
 import { groq } from "next-sanity";
 import { client } from "../lib/client";
 
-export const fetchAbout = async () => {
+export const fetchGeneral = async () => {
   const query = groq`
     *[_type=="about"][0]{
     _id,
@@ -23,10 +23,11 @@ export const fetchAbout = async () => {
         }
       },
       alt
-    }
+    },
+    characteristics
   }
 `;
 
-  const aboutData = await client.fetch(query);
-  return aboutData;
+  const data = await client.fetch(query);
+  return data;
 };

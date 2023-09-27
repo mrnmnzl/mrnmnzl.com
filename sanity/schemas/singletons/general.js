@@ -48,6 +48,21 @@ const about = {
         },
       ],
     },
+    {
+      title: "Characteristics",
+      type: "array",
+      name: "Characteristics",
+      of: [
+        {
+          type: "object",
+          name: "inline",
+          fields: [
+            { type: "string", name: "emoji" },
+            { type: "string", name: "title" },
+          ],
+        },
+      ],
+    },
   ],
 };
 
