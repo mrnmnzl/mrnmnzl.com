@@ -4,6 +4,7 @@ import { fetchProject } from "@/sanity/utils/fetchProjects";
 import { CustomPortableText } from "@/components/CustomPortableText";
 import { ProjectsTopBar } from "@/components/ProjectsTopBar";
 import { ImageGallery } from "@/components/ImageGallery";
+import { IoLinkOutline, IoLogoGithub } from "react-icons/io5";
 
 function getImages(images) {
   const imageData = images.map((image) => {
@@ -72,12 +73,24 @@ const ProjectPage = async ({ params }) => {
               </div>
             ) : null}
             {project.projectUrl ? (
-              <div className="mt-4">
+              <div className="inline-block px-3 py-1 mt-6 mr-4 rounded bg-neutral-300">
                 <Link
                   href={project.projectUrl}
-                  className="mt-6 mb-2 text-xl font-bold"
+                  className="flex items-center text-lg dark:text-text-light"
                 >
-                  Link
+                  <IoLinkOutline className="mr-1 text-2xl" />
+                  Project Link
+                </Link>
+              </div>
+            ) : null}
+            {project.repositoryUrl ? (
+              <div className="inline-block px-3 py-1 mt-6 rounded bg-neutral-300">
+                <Link
+                  href={project.repositoryUrl}
+                  className="flex items-center text-lg dark:text-text-light"
+                >
+                  <IoLogoGithub className="mr-1 text-2xl" />
+                  Repository Link
                 </Link>
               </div>
             ) : null}

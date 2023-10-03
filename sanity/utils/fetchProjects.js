@@ -26,6 +26,7 @@ export const fetchProject = async (querySlug) => {
     slug,
     icon,
     projectUrl,
+    repositoryUrl,
     coverImage {
       asset-> {
         url,

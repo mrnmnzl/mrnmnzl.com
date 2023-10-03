@@ -42,6 +42,11 @@ const project = {
       type: "url",
     },
     {
+      name: "repositoryUrl",
+      title: "Repository URL",
+      type: "url",
+    },
+    {
       name: "coverImage",
       title: "Cover Image",
       type: "image",
