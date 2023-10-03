@@ -3,7 +3,7 @@ import { DesktopIcon } from "./DesktopIcon";
 import { FcDocument } from "react-icons/fc";
 import { MobileIcon } from "./MobileIcon";
 import {
-  FaTiktok,
+  // FaTiktok,
   FaInstagram,
   FaGithub,
   FaFolder,
@@ -39,13 +39,13 @@ const Desktop = ({ children }) => {
           >
             <FaInstagram className="w-full h-full text-white" />
           </MobileIcon>
-          <MobileIcon
+          {/* <MobileIcon
             title="Tiktok"
             location="https://www.tiktok.com/@unaestheticbooktalks"
             className="bg-black"
           >
             <FaTiktok className="w-full h-full text-white" />
-          </MobileIcon>
+          </MobileIcon> */}
           <MobileIcon
             title="LinkedIn"
             location="https://www.linkedin.com/in/mrnmnzl/"
