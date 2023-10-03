@@ -5,6 +5,12 @@ const about = {
   type: "document",
   fields: [
     {
+      name: "name",
+      title: "Name",
+      type: "string",
+      description: "Name",
+    },
+    {
       name: "title",
       title: "Title",
       type: "string",
@@ -15,6 +21,12 @@ const about = {
       title: "Subtitle",
       type: "string",
       description: "Page subtitle",
+    },
+    {
+      name: "url",
+      title: "URL",
+      type: "string",
+      description: "Page URL",
     },
     {
       name: "framework",
@@ -51,7 +63,7 @@ const about = {
     {
       title: "Characteristics",
       type: "array",
-      name: "Characteristics",
+      name: "characteristics",
       of: [
         {
           type: "object",

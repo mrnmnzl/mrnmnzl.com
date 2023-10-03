@@ -1,6 +1,7 @@
 import { fetchGeneral } from "@/sanity/utils/fetchGeneral";
 import { MobileTopBar } from "@/components/MobileTopBar";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 async function SettingsAppearancePage() {
   const data = await fetchGeneral();
@@ -25,40 +26,24 @@ async function SettingsAppearancePage() {
               height={data.portrait.asset.metadata.dimensions.height}
             />
           </div>
-          <h1 className="-mb-1 text-xl font-bold">Marion Menzl</h1>
+          <h1 className="-mb-1 text-xl font-bold">{data.name}</h1>
           <p className="mb-5 text-text-light dark:text-neutral-500">
             marion.menzl@me.com
           </p>
           <div className="flex flex-col w-full p-4 pt-6">
             <div className="w-full pl-4 mb-8 text-lg bg-mobile-bg dark:bg-mobile-bar-dark rounded-xl">
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">👩‍💻</span>
-                <p className="w-full py-2 border-b dark:border-neutral-700">
-                  Frontend dev
-                </p>
-              </div>
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">👩‍🏫</span>
-                <p className="w-full py-2 border-b dark:border-neutral-700">
-                  Former uni lecturer
-                </p>
-              </div>
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">👩‍💼</span>
-                <p className="w-full py-2 border-b dark:border-neutral-700">
-                  Former small business owner
-                </p>
-              </div>
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">🐺</span>
-                <p className="w-full py-2 border-b dark:border-neutral-700">
-                  Dog mum
-                </p>
-              </div>
-              <div className="flex items-center">
-                <span className="mr-4 text-2xl">📚</span>
-                <p className="py-2 ">Book addict</p>
-              </div>
+              {data.characteristics.map((characteristic, index) => (
+                <div className="flex items-center" key={index}>
+                  <span className="mr-4 text-2xl">{characteristic.emoji}</span>
+                  <p
+                    className={cn("w-full py-2 dark:border-neutral-700", {
+                      "border-b": index !== data.characteristics.length - 1,
+                    })}
+                  >
+                    {characteristic.title}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

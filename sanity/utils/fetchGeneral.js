@@ -6,8 +6,10 @@ export const fetchGeneral = async () => {
   const query = groq`
     *[_type=="about"][0]{
     _id,
+    name,
     title,
     subtitle, 
+    url,
     framework,
     version,
     styling,
@@ -24,7 +26,7 @@ export const fetchGeneral = async () => {
       },
       alt
     },
-    characteristics
+    characteristics[]
   }
 `;
 

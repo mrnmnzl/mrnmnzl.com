@@ -25,32 +25,19 @@ function SettingsDesktopPage({ data, className }) {
         </p>
         <div className="w-full">
           <div className="rounded-xl bg-neutral-200 dark:bg-neutral-700 border-window-border-light">
-            <div className="py-2 mx-2 border-b border-window-border-light">
-              <p className="text-sm">
-                <span className="mr-2 text-lg">👩‍💻</span>Frontend dev
-              </p>
-            </div>
-            <div className="py-2 mx-2 border-b border-window-border-light">
-              <p className="text-sm">
-                <span className="mr-2 text-lg">👩‍🏫</span>Former uni lecturer
-              </p>
-            </div>
-            <div className="py-2 mx-2 border-b border-window-border-light">
-              <p className="text-sm">
-                <span className="mr-2 text-lg">👩‍💼</span>Former small business
-                owner
-              </p>
-            </div>
-            <div className="py-2 mx-2 border-b border-window-border-light">
-              <p className="text-sm">
-                <span className="mr-2 text-lg">🐺</span>Dog mum
-              </p>
-            </div>{" "}
-            <div className="py-2 mx-2">
-              <p className="text-sm">
-                <span className="mr-2 text-lg">📚</span>Book addict
-              </p>
-            </div>
+            {data.characteristics.map((characteristic, index) => (
+              <div
+                key={index}
+                className={cn("py-2 mx-2 border-window-border-light", {
+                  "border-b": index !== data.characteristics.length - 1,
+                })}
+              >
+                <p className="text-sm">
+                  <span className="mr-2 text-lg">{characteristic.emoji}</span>
+                  {characteristic.title}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
